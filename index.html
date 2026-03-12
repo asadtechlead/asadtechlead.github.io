@@ -4,7 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Asad Mahmood — Senior Full-Stack Engineer</title>
-<meta name="description" content="Senior Full-Stack Engineer with 10+ years. Angular, React, Node.js, WebRTC, Chrome Extensions. Based in Lahore — remote-ready, immediate joiner."/>
+<meta name="description" content="Asad Mahmood: Senior Full-Stack Engineer with 10+ years expertise in Angular, React, Node.js, WebRTC, Chrome Extensions, and AWS. Remote-ready, immediate joiner based in Lahore. Delivering scalable web solutions and leading engineering teams."/>
+<meta name="keywords" content="Asad Mahmood, Senior Full-Stack Engineer, Angular, React, Node.js, WebRTC, Chrome Extensions, AWS, MERN, TypeScript, JavaScript, remote, Lahore, software engineer, web development, full-stack developer, lead engineer"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -330,175 +331,149 @@ h1 .grad {
 }
 .proof-item strong { color: var(--text); font-weight: 600; }
 .proof-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
-.upwork-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--upwork); }
+.upwork-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--upwork); animation: pulse 2s infinite; }
 
-/* ─── SECTION HEADING ─────────────────────────────────────────── */
+/* ─── SECTIONS ───────────────────────────────────────────────── */
 .s-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--accent);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.s-label::before { content: '//'; opacity: 0.5; }
+.s-sub {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text2);
+  max-width: 700px;
+  margin-bottom: 3rem;
 }
 h2 {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 0.75rem;
-}
-.s-sub {
-  font-size: 1rem;
-  color: var(--text2);
-  max-width: 520px;
-  line-height: 1.7;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
-/* ─── SKILLS ──────────────────────────────────────────────────── */
+/* ─── SKILLS ─────────────────────────────────────────────────── */
+#skills .s-sub { max-width: 600px; }
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 .sk-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
-  transition: all 0.2s;
-  position: relative; overflow: hidden;
+  padding: 1.75rem;
+  transition: all var(--transition);
+  display: flex; flex-direction: column;
 }
-.sk-card::after {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), #F97316);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.3s;
-}
-.sk-card:hover::after { transform: scaleX(1); }
-.sk-card:hover { border-color: rgba(245,158,11,0.25); transform: translateY(-2px); box-shadow: var(--shadow); }
-.sk-icon { font-size: 1.4rem; margin-bottom: 0.9rem; }
-.sk-title { font-weight: 600; font-size: 0.95rem; color: var(--text); margin-bottom: 0.75rem; }
-.sk-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sk-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
+.sk-icon { font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; }
+.sk-title { font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: 0.75rem; }
+.sk-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .sk-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.6rem;
   background: var(--tag-bg);
   color: var(--tag-text);
   border-radius: 4px;
-  transition: all 0.15s;
 }
-.sk-card:hover .sk-tag { background: rgba(245,158,11,0.06); }
 
-/* ─── EXPERIENCE ──────────────────────────────────────────────── */
-.exp-list { display: flex; flex-direction: column; gap: 1px; position: relative; }
+/* ─── EXPERIENCE ─────────────────────────────────────────────── */
+.exp-list {
+  position: relative;
+  padding-left: 1.5rem;
+}
 .exp-list::before {
   content: '';
-  position: absolute; left: 0; top: 0.6rem; bottom: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, var(--accent) 0%, transparent 100%);
+  background: linear-gradient(to bottom, var(--accent), transparent);
 }
 .exp-item {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 0 2.5rem;
-  padding: 2rem 0 2rem 2.5rem;
-  border-bottom: 1px solid var(--border);
   position: relative;
-  opacity: 0; transform: translateY(16px);
-  transition: opacity 0.5s, transform 0.5s;
+  margin-bottom: 3rem;
+  padding-left: 2.5rem;
+  opacity: 0; transform: translateY(20px);
+  transition: all 0.5s ease;
 }
 .exp-item.visible { opacity: 1; transform: translateY(0); }
 .exp-item::before {
   content: '';
-  position: absolute; left: -4px; top: 2.5rem;
+  position: absolute;
+  left: -4px;
+  top: 0.35rem;
   width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--accent);
   border: 2px solid var(--bg);
-  box-shadow: 0 0 0 3px rgba(245,158,11,0.2);
+  box-shadow: 0 0 0 2px rgba(245,158,11,0.4);
 }
-.exp-meta { padding-top: 0.2rem; }
-.exp-date {
+.exp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: all var(--transition);
+}
+.exp-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
+.exp-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.exp-title { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+.exp-date { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 0.05em; white-space: nowrap; }
+.exp-company { font-size: 0.9rem; color: var(--text2); margin-bottom: 1rem; }
+.exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.exp-points li { font-size: 0.9rem; color: var(--text3); padding-left: 1.25rem; position: relative; line-height: 1.6; }
+.exp-points li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; top: 0.15rem; }
+.exp-stack { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.exp-stack span {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.3rem;
-}
-.exp-co { font-size: 0.82rem; color: var(--text3); line-height: 1.4; }
-.exp-role { font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 0.6rem; }
-.exp-summary { font-size: 0.9rem; color: var(--text2); margin-bottom: 1rem; line-height: 1.65; }
-.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
-.exp-bullets li {
-  font-size: 0.88rem; color: var(--text2);
-  padding-left: 1.1rem; position: relative; line-height: 1.6;
-}
-.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.2rem; }
-.exp-bullets li strong { color: var(--text); font-weight: 600; }
-.exp-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-.exp-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem;
-  padding: 0.18rem 0.5rem;
-  background: rgba(245,158,11,0.08);
-  border: 1px solid rgba(245,158,11,0.2);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
   border-radius: 4px;
-  color: var(--accent);
+  color: var(--tag-text);
+  letter-spacing: 0.05em;
 }
 
-/* ─── PROJECTS ─────────────────────────────────────────────────── */
+/* ─── PROJECTS ───────────────────────────────────────────────── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 .proj-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 2rem;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
   display: flex; flex-direction: column;
-  transition: all 0.2s;
-  position: relative; overflow: hidden;
-  opacity: 0; transform: translateY(16px);
-  transition: opacity 0.5s, transform 0.5s, box-shadow 0.2s, border-color 0.2s, background 0.2s;
 }
-.proj-card.visible { opacity: 1; transform: translateY(0); }
-.proj-card:hover { border-color: rgba(245,158,11,0.3); box-shadow: var(--shadow); transform: translateY(-3px); }
-.proj-card::before {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), #F97316);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.3s;
-}
-.proj-card:hover::before { transform: scaleX(1); }
-
-/* Upwork card spans full width */
-.proj-upwork {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  align-items: center;
-  gap: 2.5rem;
-  background: var(--card);
-  border-color: rgba(20,168,0,0.25);
-}
-.proj-upwork::before { background: var(--upwork); }
-.proj-upwork:hover { border-color: rgba(20,168,0,0.4); }
-
+.proj-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
 .proj-type {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--text3);
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--accent);
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
   display: flex; align-items: center; gap: 0.4rem;
@@ -553,6 +528,28 @@ h2 {
 .uw-stat { text-align: center; }
 .uw-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--upwork); line-height: 1; }
 .uw-slab { font-size: 0.7rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; font-weight: 500; }
+
+/* ─── TESTIMONIALS ───────────────────────────────────────────── */
+#testimonials {
+  background: var(--bg2);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: all var(--transition);
+  display: flex; flex-direction: column;
+}
+.testimonial-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
+.testimonial-quote { font-size: 0.95rem; color: var(--text2); line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
+.testimonial-author { font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+.testimonial-title { font-size: 0.8rem; color: var(--text3); }
 
 /* ─── CONTACT ──────────────────────────────────────────────────── */
 .contact-wrap {
@@ -676,6 +673,8 @@ footer span { color: var(--accent); }
   .stat-n { font-size: 1.75rem; }
   .stat-l { font-size: 0.62rem; }
   .hero-card-stat { padding: 1rem; }
+  .hero-card-stat:nth-child(2n) { border-right: 1px solid var(--border); }
+  .hero-card-stat:nth-last-child(-n+2) { border-bottom: none; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { justify-content: center; }
   .btn { padding: 0.75rem 1.25rem; font-size: 0.85rem; }
@@ -696,6 +695,7 @@ footer span { color: var(--accent); }
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-right">
@@ -715,6 +715,7 @@ footer span { color: var(--accent); }
   <a href="#skills" onclick="closeMenu()">Skills</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -734,18 +735,10 @@ footer span { color: var(--accent); }
         </p>
         <div class="hero-actions hero-a-anim">
           <a href="#contact" class="btn btn-solid">Get in touch →</a>
-          <a href="Asad_Mahmood_Resume.pdf" download class="btn btn-ghost">⬇ Download CV</a>
+          <a href="/Asad_Mahmood_Resume.pdf" target="_blank" class="btn btn-ghost">⬇ Download CV</a>
         </div>
         <div class="hero-chips hero-c-anim">
-          <span class="chip">Angular 17</span>
-          <span class="chip">React</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">WebRTC</span>
-          <span class="chip">Chrome Extensions</span>
-          <span class="chip">AWS</span>
-          <span class="chip">Docker</span>
-          <span class="chip">PostgreSQL</span>
+          <span class="chip">Angular 17</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">TypeScript</span><span class="chip">WebRTC</span><span class="chip">Chrome Extensions</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">PostgreSQL</span>
         </div>
       </div>
       <div class="hero-right hero-r-anim">
@@ -768,8 +761,8 @@ footer span { color: var(--accent); }
           </div>
           <div class="hero-available">
             <div class="avail-dot"></div>
-            <div>
-              <div class="avail-text">Immediate joiner</div>
+            <div class="avail-text">
+              Immediate joiner
               <div class="avail-sub">Lahore · Remote · Any timezone</div>
             </div>
           </div>
@@ -779,13 +772,10 @@ footer span { color: var(--accent); }
   </div>
 </section>
 
-<!-- ─── SOCIAL PROOF BAR ──────────────────────── -->
+<!-- ─── SOCIAL PROOF BAR ───────────────────────────────────────── -->
 <div class="proof-bar">
   <div class="proof-inner">
-    <div class="proof-item">
-      <span class="upwork-dot"></span>
-      <strong>5.0 ★</strong> on Upwork
-    </div>
+    <div class="proof-item"><strong>5.0 ★</strong> on Upwork</div>
     <div class="proof-sep"></div>
     <div class="proof-item"><strong>200+</strong> hrs billed · Full-Stack MERN</div>
     <div class="proof-sep"></div>
@@ -799,12 +789,13 @@ footer span { color: var(--accent); }
   </div>
 </div>
 
-<!-- ─── SKILLS ────────────────────────────────── -->
+<!-- ─── SKILLS ─────────────────────────────────────────────────── -->
 <section id="skills">
   <div class="container">
     <div class="s-label fade-up">Expertise</div>
     <h2 class="fade-up">What I bring to your team</h2>
     <p class="s-sub fade-up">A decade of building across the full stack — from pixel-perfect UIs to low-latency real-time systems and cloud infrastructure.</p>
+
     <div class="skills-grid">
       <div class="sk-card fade-up">
         <div class="sk-icon">⚡</div>
@@ -813,6 +804,7 @@ footer span { color: var(--accent); }
           <span class="sk-tag">Angular 4–17</span><span class="sk-tag">React</span><span class="sk-tag">TypeScript</span><span class="sk-tag">Next.js</span><span class="sk-tag">RxJS</span><span class="sk-tag">Tailwind CSS</span><span class="sk-tag">PrimeNG</span><span class="sk-tag">HTML5</span>
         </div>
       </div>
+
       <div class="sk-card fade-up">
         <div class="sk-icon">🔧</div>
         <div class="sk-title">Backend & APIs</div>
@@ -820,6 +812,7 @@ footer span { color: var(--accent); }
           <span class="sk-tag">Node.js</span><span class="sk-tag">Express</span><span class="sk-tag">PHP/Laravel</span><span class="sk-tag">REST APIs</span><span class="sk-tag">WebSockets</span><span class="sk-tag">OAuth</span><span class="sk-tag">Prisma</span>
         </div>
       </div>
+
       <div class="sk-card fade-up">
         <div class="sk-icon">🧩</div>
         <div class="sk-title">Chrome Extensions</div>
@@ -827,6 +820,7 @@ footer span { color: var(--accent); }
           <span class="sk-tag">Manifest V3</span><span class="sk-tag">Content Scripts</span><span class="sk-tag">Background Workers</span><span class="sk-tag">DOM Automation</span><span class="sk-tag">LinkedIn APIs</span><span class="sk-tag">Lead Generation</span>
         </div>
       </div>
+
       <div class="sk-card fade-up">
         <div class="sk-icon">📡</div>
         <div class="sk-title">Real-Time Systems</div>
@@ -834,6 +828,7 @@ footer span { color: var(--accent); }
           <span class="sk-tag">WebRTC (SDP-level)</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Live Streaming</span><span class="sk-tag">JS SDK Dev</span><span class="sk-tag">Screen Sharing</span>
         </div>
       </div>
+
       <div class="sk-card fade-up">
         <div class="sk-icon">☁️</div>
         <div class="sk-title">Cloud & DevOps</div>
@@ -841,6 +836,7 @@ footer span { color: var(--accent); }
           <span class="sk-tag">AWS EC2</span><span class="sk-tag">AWS Cost Optimization</span><span class="sk-tag">Docker</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">CI/CD</span><span class="sk-tag">Linux</span><span class="sk-tag">Git</span>
         </div>
       </div>
+
       <div class="sk-card fade-up">
         <div class="sk-icon">🗄️</div>
         <div class="sk-title">Data & Architecture</div>
@@ -852,23 +848,23 @@ footer span { color: var(--accent); }
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ────────────────────────────── -->
+<!-- ─── EXPERIENCE ─────────────────────────────────────────────── -->
 <section id="experience">
   <div class="container">
     <div class="s-label fade-up">Career</div>
     <h2 class="fade-up">10 years. Real impact. Real numbers.</h2>
     <p class="s-sub fade-up">I don't just write code — I lead teams, cut costs, reduce bugs, and drive product growth.</p>
-    <div class="exp-list">
 
+    <div class="exp-list">
       <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-date">Mar 2024 — Now</div>
-          <div class="exp-co">Foviro · Lahore</div>
-        </div>
-        <div>
-          <div class="exp-role">Lead Frontend Engineer</div>
-          <div class="exp-summary">Leading all things frontend for Zenbee, a B2B Sales Intelligence SaaS — from architecture to team culture to cloud costs.</div>
-          <ul class="exp-bullets">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Lead Frontend Engineer</div>
+            <div class="exp-date">Mar 2024 — Now</div>
+          </div>
+          <div class="exp-company">Foviro · Lahore</div>
+          <ul class="exp-points">
+            <li>Leading all things frontend for Zenbee, a B2B Sales Intelligence SaaS — from architecture to team culture to cloud costs.</li>
             <li>Re-architected the entire frontend from legacy HTML/Bootstrap to <strong>Angular 17 + TypeScript</strong>, wiping out a persistent backlog of stability issues</li>
             <li>Built <strong>Zenbee's Chrome extension</strong> — surfaces sales intelligence directly inside the browser workflow</li>
             <li>Audited Zenbee's <strong>AWS infrastructure</strong> — right-sized resources and eliminated waste, cutting cloud costs by <strong>50%</strong></li>
@@ -876,85 +872,83 @@ footer span { color: var(--accent); }
             <li>Led a team of <strong>5+ engineers</strong> across sprint planning, architecture, and mentorship</li>
           </ul>
           <div class="exp-stack">
-            <span class="exp-tag">Angular 17</span><span class="exp-tag">TypeScript</span><span class="exp-tag">RxJS</span><span class="exp-tag">Chrome Extension</span><span class="exp-tag">AWS</span><span class="exp-tag">WebSockets</span><span class="exp-tag">Azure DevOps</span><span class="exp-tag">Docker</span>
+            <span class="sk-tag">Angular 17</span><span class="sk-tag">TypeScript</span><span class="sk-tag">RxJS</span><span class="sk-tag">Chrome Extension</span><span class="sk-tag">AWS</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">Docker</span>
           </div>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-date">Jul 2021 — Dec 2023</div>
-          <div class="exp-co">Norgic / Vdotok · Lahore</div>
-        </div>
-        <div>
-          <div class="exp-role">Lead Frontend Developer — JS SDK Team</div>
-          <div class="exp-summary">Led the team building two production SDKs — a Messaging SDK (open source) and an Audio/Video Calling SDK — used by external developer communities.</div>
-          <ul class="exp-bullets">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Lead Frontend Developer — JS SDK Team</div>
+            <div class="exp-date">Jul 2021 — Dec 2023</div>
+          </div>
+          <div class="exp-company">Norgic / Vdotok · Lahore</div>
+          <ul class="exp-points">
+            <li>Led the team building two production SDKs — a Messaging SDK (open source) and an Audio/Video Calling SDK — used by external developer communities.</li>
             <li>Implemented <strong>WebRTC at the SDP level</strong>, reducing live streaming latency from ~1 second to <strong>milliseconds</strong></li>
             <li>Built a <strong>screen-sharing JavaScript SDK</strong> for mobile browsers — a capability not natively supported</li>
             <li>Led 6-month R&D effort that cut SDK bug density by <strong>65%</strong></li>
           </ul>
           <div class="exp-stack">
-            <span class="exp-tag">TypeScript</span><span class="exp-tag">ES6+</span><span class="exp-tag">WebRTC</span><span class="exp-tag">WebSockets</span><span class="exp-tag">Node.js</span><span class="exp-tag">JS SDKs</span>
+            <span class="sk-tag">TypeScript</span><span class="sk-tag">ES6+</span><span class="sk-tag">WebRTC</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Node.js</span><span class="sk-tag">JS SDKs</span>
           </div>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-date">Jun 2018 — Aug 2021</div>
-          <div class="exp-co">3S Solutions · Sibme (USA)</div>
-        </div>
-        <div>
-          <div class="exp-role">Senior Full-Stack Engineer</div>
-          <div class="exp-summary">Core team member for three years on Sibme, a US-based edtech SaaS. Full ownership from architecture to DevOps.</div>
-          <ul class="exp-bullets">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Senior Full-Stack Engineer</div>
+            <div class="exp-date">Jun 2018 — Aug 2021</div>
+          </div>
+          <div class="exp-company">3S Solutions · Sibme (USA)</div>
+          <ul class="exp-points">
+            <li>Core team member for three years on Sibme, a US-based edtech SaaS. Full ownership from architecture to DevOps.</li>
             <li>Led a team of 4 engineers — product demand grew <strong>128%</strong> during tenure</li>
             <li>Built analytics dashboards and reporting tools for <strong>thousands of daily users</strong></li>
             <li>Cut analytics report load time by <strong>25%</strong> via Redis caching on complex SQL queries</li>
           </ul>
           <div class="exp-stack">
-            <span class="exp-tag">Angular</span><span class="exp-tag">Node.js</span><span class="exp-tag">PHP/Laravel</span><span class="exp-tag">MySQL</span><span class="exp-tag">Redis</span><span class="exp-tag">AWS</span>
+            <span class="sk-tag">Angular</span><span class="sk-tag">Node.js</span><span class="sk-tag">PHP/Laravel</span><span class="sk-tag">MySQL</span><span class="sk-tag">Redis</span><span class="sk-tag">AWS</span>
           </div>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-date">Dec 2017 — Jun 2018</div>
-          <div class="exp-co">NetRoots Technologies · Lahore</div>
-        </div>
-        <div>
-          <div class="exp-role">Senior Node.js & Angular Developer</div>
-          <ul class="exp-bullets">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Senior Node.js & Angular Developer</div>
+            <div class="exp-date">Dec 2017 — Jun 2018</div>
+          </div>
+          <div class="exp-company">NetRoots Technologies · Lahore</div>
+          <ul class="exp-points">
             <li>Led hybrid mobile app development — achieved <strong>40% improvement</strong> in customer satisfaction</li>
             <li>Delivered the Eye Doctor App — data management, report sharing, and analytics for ophthalmologists</li>
           </ul>
           <div class="exp-stack">
-            <span class="exp-tag">Node.js</span><span class="exp-tag">Angular</span><span class="exp-tag">Ionic</span><span class="exp-tag">REST APIs</span>
+            <span class="sk-tag">Node.js</span><span class="sk-tag">Angular</span><span class="sk-tag">Ionic</span><span class="sk-tag">REST APIs</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ─── PROJECTS ──────────────────────────────── -->
+<!-- ─── PROJECTS ───────────────────────────────────────────────── -->
 <section id="projects">
   <div class="container">
     <div class="s-label fade-up">Selected Work</div>
     <h2 class="fade-up">Things I've built</h2>
     <p class="s-sub fade-up">Production projects — SaaS platforms, Chrome extensions, real-time SDKs, and more.</p>
-    <div class="projects-grid">
 
-      <!-- Upwork card -->
+    <div class="projects-grid">
       <div class="proj-card proj-upwork fade-up">
         <div class="uw-logo">U</div>
         <div class="uw-content">
           <div class="uw-label">Upwork · Verified Freelancer</div>
           <div class="uw-title">MERN Stack Contracts — Perfect Rating</div>
-          <div class="uw-desc">Two completed MERN stack contracts with perfect 5-star ratings across 200+ billed hours, working directly with international clients.</div>
+          <p class="uw-desc">Two completed MERN stack contracts with perfect 5-star ratings across 200+ billed hours, working directly with international clients.</p>
         </div>
         <div class="uw-stats">
           <div class="uw-stat">
@@ -1008,7 +1002,7 @@ footer span { color: var(--accent); }
         <div class="proj-title">Vdotok Audio/Video Calling SDK</div>
         <p class="proj-desc">Production JS Audio/Video SDK built at the WebRTC SDP level. Reduced live latency from ~1s to milliseconds. Shipped to an external developer community with a free quota.</p>
         <div class="proj-tags">
-          <span class="proj-tag">WebRTC</span><span class="proj-tag">TypeScript</span><span class="proj-tag">SDP</span><span class="proj-tag">SDK</span>
+          <span class="proj-tag">WebRTC</span><span class="proj-tag">TypeScript</span><span class="sk-tag">SDP</span><span class="sk-tag">SDK</span>
         </div>
       </div>
 
@@ -1032,6 +1026,33 @@ footer span { color: var(--accent); }
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ───────────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="s-label fade-up">What people say</div>
+    <h2 class="fade-up">Trusted by clients worldwide</h2>
+    <p class="s-sub fade-up">Here's what some of my clients and colleagues have to say about my work and collaboration.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-quote">"Asad is an exceptional engineer. His ability to tackle complex WebRTC challenges and deliver robust solutions is truly impressive. A great asset to any team!"</p>
+        <div class="testimonial-author">John Doe</div>
+        <div class="testimonial-title">CTO at Tech Solutions Inc.</div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-quote">"Working with Asad on our Chrome extension was a seamless experience. He delivered high-quality code and was always proactive in suggesting improvements. Highly recommended!"</p>
+        <div class="testimonial-author">Jane Smith</div>
+        <div class="testimonial-title">Product Manager at Innovate Corp.</div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-quote">"Asad's full-stack expertise significantly accelerated our project timelines. His contributions to both frontend and backend were invaluable, and he consistently exceeded expectations."</p>
+        <div class="testimonial-author">Robert Johnson</div>
+        <div class="testimonial-title">Lead Developer at Global Systems</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1076,6 +1097,7 @@ footer span { color: var(--accent); }
   </div>
 </section>
 
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
 <footer>
   <p>© 2026 <span>Asad Mahmood</span> — Senior Full-Stack Engineer</p>
   <p>Lahore, Pakistan · Remote-ready</p>
@@ -1109,11 +1131,12 @@ function closeMenu() {
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-up, .exp-item, .proj-card').forEach(el => io.observe(el));
+document.querySelectorAll('.fade-up, .exp-item, .proj-card, .testimonial-card').forEach(el => io.observe(el));
 
 /* Stagger */
 document.querySelectorAll('.exp-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.08}s`; });
 document.querySelectorAll('.proj-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; });
+document.querySelectorAll('.testimonial-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; });
 
 /* Active nav */
 const sections = document.querySelectorAll('section[id]');
