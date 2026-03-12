@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Asad Mahmood — Senior Full-Stack Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Epilogue:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #080A0F;
+    --bg2: #0E1118;
+    --bg3: #141820;
+    --accent: #F5A623;
+    --accent2: #FF6B35;
+    --text: #E8EAF0;
+    --muted: #6B7280;
+    --border: #1E2330;
+    --card: #0F1219;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(8,10,15,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
+  .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%); top: 10%; right: -10%; pointer-events: none; }
+  .hero-glow2 { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,107,53,0.06) 0%, transparent 70%); bottom: 20%; left: -5%; pointer-events: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+  .hero-tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--accent); }
+  h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(3rem, 5vw, 5rem); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+  h1 .accent { color: var(--accent); }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 0.7rem; padding: 0.35rem 0.75rem; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); letter-spacing: 0.05em; transition: all 0.2s; }
+  .badge:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; padding: 0.85rem 2rem; background: var(--accent); color: #080A0F; text-decoration: none; border-radius: 4px; transition: all 0.2s; border: none; cursor: pointer; }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  .btn-secondary { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; padding: 0.85rem 2rem; background: transparent; color: var(--text); text-decoration: none; border-radius: 4px; border: 1px solid var(--border); transition: all 0.2s; cursor: pointer; }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .stat-box { background: var(--card); padding: 2rem; text-align: center; transition: background 0.2s; }
+  .stat-box:hover { background: var(--bg3); }
+  .stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 3rem; line-height: 1; color: var(--accent); margin-bottom: 0.5rem; }
+  .stat-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .availability-box { grid-column: 1 / -1; background: var(--card); padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1rem; }
+  .availability-dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; animation: pulse-dot 2s infinite; flex-shrink: 0; }
+  @keyframes pulse-dot { 0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); } }
+  .availability-text { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--text); }
+  .availability-text span { color: #22c55e; font-weight: 500; }
+
+  .upwork-strip { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2rem 4rem; }
+  .upwork-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+  .upwork-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .upwork-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; align-items: center; }
+  .upwork-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .upwork-stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--text); display: flex; align-items: center; gap: 0.35rem; }
+  .stars { color: var(--accent); font-size: 0.9rem; letter-spacing: 1px; }
+  .upwork-stat-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .upwork-divider { width: 1px; height: 40px; background: var(--border); }
+  .upwork-platform { display: flex; align-items: center; gap: 0.6rem; margin-left: auto; }
+  .upwork-icon { width: 28px; height: 28px; background: #14a800; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.75rem; color: white; }
+  .upwork-platform-label { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; color: #14a800; }
+
+  section { padding: 7rem 4rem; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 80px; }
+  h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -0.02em; margin-bottom: 3rem; line-height: 1.1; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; transition: all 0.25s; position: relative; overflow: hidden; }
+  .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-card:hover { border-color: rgba(245,166,35,0.2); transform: translateY(-2px); }
+  .skill-card-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .skill-card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.75rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-tag { font-family: 'DM Mono', monospace; font-size: 0.65rem; padding: 0.25rem 0.6rem; background: var(--bg3); border-radius: 3px; color: var(--muted); letter-spacing: 0.05em; }
+
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--accent), transparent); }
+  .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 2rem; opacity: 0; transform: translateX(-20px); transition: all 0.5s ease; }
+  .timeline-item.visible { opacity: 1; transform: translateX(0); }
+  .timeline-dot { position: absolute; left: -2.45rem; top: 0.5rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 12px rgba(245,166,35,0.4); }
+  .exp-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: border-color 0.2s; }
+  .exp-card:hover { border-color: rgba(245,166,35,0.25); }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+  .exp-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; }
+  .exp-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.08em; white-space: nowrap; }
+  .exp-company { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
+  .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .exp-points li { font-size: 0.9rem; color: #9CA3AF; padding-left: 1.25rem; position: relative; line-height: 1.6; }
+  .exp-points li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; top: 0.15rem; }
+  .exp-stack { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .exp-stack span { font-family: 'DM Mono', monospace; font-size: 0.65rem; padding: 0.2rem 0.55rem; background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.2); border-radius: 3px; color: var(--accent); letter-spacing: 0.05em; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; transition: all 0.25s; position: relative; overflow: hidden; }
+  .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-card:hover { transform: translateY(-3px); border-color: rgba(245,166,35,0.2); }
+  .project-type { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .project-type-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .project-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 3.5rem; color: var(--border); line-height: 1; margin-bottom: 1rem; transition: color 0.2s; }
+  .project-card:hover .project-num { color: rgba(245,166,35,0.12); }
+  .project-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.75rem; }
+  .project-desc { font-size: 0.88rem; color: #9CA3AF; line-height: 1.7; margin-bottom: 1.25rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-tag { font-family: 'DM Mono', monospace; font-size: 0.65rem; padding: 0.25rem 0.6rem; background: var(--bg3); border-radius: 3px; color: var(--muted); }
+
+  .upwork-card { background: var(--card); border: 1px solid rgba(20,168,0,0.25); border-radius: 10px; padding: 2rem; transition: all 0.25s; position: relative; overflow: hidden; grid-column: 1 / -1; }
+  .upwork-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #14a800; }
+  .upwork-card:hover { border-color: rgba(20,168,0,0.4); transform: translateY(-2px); }
+  .upwork-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .upwork-badge { display: flex; align-items: center; gap: 0.5rem; background: rgba(20,168,0,0.1); border: 1px solid rgba(20,168,0,0.3); border-radius: 20px; padding: 0.3rem 0.75rem; }
+  .upwork-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #14a800; }
+  .upwork-badge-text { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: #14a800; text-transform: uppercase; }
+  .upwork-card-stats { display: flex; gap: 2.5rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+  .upwork-card-stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--text); }
+  .upwork-card-stat-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .upwork-card-desc { font-size: 0.88rem; color: #9CA3AF; line-height: 1.7; }
+
+  #contact { max-width: 1200px; padding: 7rem 4rem; margin: 0 auto; }
+  .contact-inner { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .contact-left h2 { margin-bottom: 1rem; }
+  .contact-left p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.8; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--text); font-size: 0.9rem; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 8px; transition: all 0.2s; }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+  .contact-link-icon { font-size: 1rem; width: 20px; text-align: center; }
+  .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .form-group input, .form-group textarea { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1rem; color: var(--text); font-family: 'Epilogue', sans-serif; font-size: 0.9rem; transition: border-color 0.2s; outline: none; resize: vertical; }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .form-group textarea { min-height: 120px; }
+  .form-submit { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 1rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #080A0F; border: none; border-radius: 6px; cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em; }
+  .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; }
+  footer span { color: var(--accent); }
+
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .hero-tag { animation: slideIn 0.6s 0.1s both; }
+  h1 { animation: slideIn 0.6s 0.2s both; }
+  .hero-sub { animation: slideIn 0.6s 0.3s both; }
+  .hero-badges { animation: slideIn 0.6s 0.4s both; }
+  .hero-ctas { animation: slideIn 0.6s 0.5s both; }
+  .hero-stats { animation: slideIn 0.7s 0.3s both; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { padding: 6rem 1.5rem 3rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+    section { padding: 5rem 1.5rem; }
+    #contact { padding: 5rem 1.5rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 2rem; }
+    .upwork-strip { padding: 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .upwork-card { grid-column: unset; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">AM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-tag">Available for hire</div>
+      <h1>Asad<br/><span class="accent">Mahmood</span></h1>
+      <p class="hero-sub">Senior Full-Stack Engineer with 10+ years building real-time SaaS platforms, Chrome extensions, and scalable APIs — from WebRTC at the SDP level to B2B sales intelligence dashboards.</p>
+      <div class="hero-badges">
+        <span class="badge">React</span>
+        <span class="badge">TypeScript</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">Angular 17</span>
+        <span class="badge">WebRTC</span>
+        <span class="badge">Chrome Extensions</span>
+        <span class="badge">PostgreSQL</span>
+        <span class="badge">Docker</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+        <a href="#experience" class="btn-secondary">View experience</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">5★</div>
+          <div class="stat-label">Upwork rating</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">65%</div>
+          <div class="stat-label">Bug density cut</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">128%</div>
+          <div class="stat-label">Product demand up</div>
+        </div>
+        <div class="availability-box">
+          <div class="availability-dot"></div>
+          <div class="availability-text"><span>Immediate joiner</span> — Lahore, Pakistan (Remote-ready)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPWORK STRIP -->
+<div class="upwork-strip">
+  <div class="upwork-inner">
+    <div class="upwork-label">Freelance track record</div>
+    <div class="upwork-stats">
+      <div class="upwork-stat">
+        <div class="upwork-stat-num">5.0 <span class="stars">★★★★★</span></div>
+        <div class="upwork-stat-label">Rating</div>
+      </div>
+      <div class="upwork-divider"></div>
+      <div class="upwork-stat">
+        <div class="upwork-stat-num">200+</div>
+        <div class="upwork-stat-label">Hours logged</div>
+      </div>
+      <div class="upwork-divider"></div>
+      <div class="upwork-stat">
+        <div class="upwork-stat-num">2</div>
+        <div class="upwork-stat-label">MERN contracts</div>
+      </div>
+    </div>
+    <div class="upwork-platform">
+      <div class="upwork-icon">U</div>
+      <div class="upwork-platform-label">Upwork Verified</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">What I work with</div>
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon">⚡</div>
+      <div class="skill-card-title">Frontend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React</span><span class="skill-tag">Angular 17</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Next.js</span><span class="skill-tag">RxJS</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">PrimeNG</span><span class="skill-tag">HTML5 / CSS3</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon">🔧</div>
+      <div class="skill-card-title">Backend & APIs</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Node.js</span><span class="skill-tag">Express</span><span class="skill-tag">PHP / Laravel</span><span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span><span class="skill-tag">OAuth</span><span class="skill-tag">Prisma</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon">🧩</div>
+      <div class="skill-card-title">Chrome Extensions</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Manifest V3</span><span class="skill-tag">Content Scripts</span><span class="skill-tag">Background Workers</span><span class="skill-tag">DOM Manipulation</span><span class="skill-tag">LinkedIn APIs</span><span class="skill-tag">Lead Generation</span><span class="skill-tag">Browser Storage</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon">📡</div>
+      <div class="skill-card-title">Real-Time Systems</div>
+      <div class="skill-tags">
+        <span class="skill-tag">WebRTC (SDP-level)</span><span class="skill-tag">WebSockets</span><span class="skill-tag">Live Streaming</span><span class="skill-tag">JS SDK Dev</span><span class="skill-tag">Screen Sharing</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon">🗄️</div>
+      <div class="skill-card-title">Databases & Cloud</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">Docker</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">Azure DevOps</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon">🤖</div>
+      <div class="skill-card-title">AI & Emerging</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LLM API Integration</span><span class="skill-tag">AI Workflows</span><span class="skill-tag">Analytics Dashboards</span><span class="skill-tag">SaaS Architecture</span><span class="skill-tag">Lead Intelligence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career</div>
+  <h2>Work Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">Lead Frontend Engineer</div>
+          <div class="exp-date">Mar 2024 — Present</div>
+        </div>
+        <div class="exp-company">Foviro Private Limited — Lahore</div>
+        <ul class="exp-points">
+          <li>Leading frontend development for Zenbee, a B2B Sales Intelligence SaaS for sales and marketing teams.</li>
+          <li>Built Zenbee's Chrome extension — surfacing sales intelligence directly inside the browser workflow.</li>
+          <li>Re-architected entire frontend from HTML/Bootstrap to Angular 17 + TypeScript, eliminating a persistent backlog of stability issues.</li>
+          <li>Established coding standards and PR practices that cut review cycle time by 30%.</li>
+          <li>Led a team of 5+ engineers across sprint planning, architecture decisions, and mentorship.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Angular 17</span><span>TypeScript</span><span>RxJS</span><span>Chrome Extension</span><span>WebSockets</span><span>Azure DevOps</span><span>Docker</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">Lead Frontend Developer — JS SDK Team</div>
+          <div class="exp-date">Jul 2021 — Dec 2023</div>
+        </div>
+        <div class="exp-company">Norgic / Vdotok — Lahore</div>
+        <ul class="exp-points">
+          <li>Led team building two production SDKs: a Messaging SDK and an Audio/Video Calling SDK for external developers.</li>
+          <li>Implemented WebRTC at the SDP level — cut live streaming latency from ~1 second to milliseconds.</li>
+          <li>Built a screen-sharing JavaScript SDK for mobile browsers where native support doesn't exist.</li>
+          <li>6-month R&D initiative reduced SDK bug density by 65%.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>TypeScript</span><span>ES6+</span><span>WebRTC</span><span>WebSockets</span><span>Node.js</span><span>JS SDKs</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">Senior Full-Stack Software Engineer</div>
+          <div class="exp-date">Jun 2018 — Aug 2021</div>
+        </div>
+        <div class="exp-company">3S Solutions — Sibme (USA-based SaaS)</div>
+        <ul class="exp-points">
+          <li>Core team member for Sibme, a US-based edtech SaaS — full-stack contributions for 3 years.</li>
+          <li>Led a team of 4 engineers; product demand grew 128% during tenure.</li>
+          <li>Built analytics dashboards and reporting for thousands of daily users.</li>
+          <li>Improved report load time by 25% via Redis caching on complex SQL queries.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Angular</span><span>Node.js</span><span>PHP/Laravel</span><span>MySQL</span><span>Redis</span><span>AWS</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">Senior Node.js & Angular Developer</div>
+          <div class="exp-date">Dec 2017 — Jun 2018</div>
+        </div>
+        <div class="exp-company">NetRoots Technologies — Lahore</div>
+        <ul class="exp-points">
+          <li>Led development of hybrid mobile applications — 40% improvement in customer satisfaction.</li>
+          <li>Delivered the Eye Doctor App — client data management, reporting, and analytics.</li>
+        </ul>
+        <div class="exp-stack"><span>Node.js</span><span>Angular</span><span>Ionic</span><span>REST APIs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Selected work</div>
+  <h2>Notable Projects</h2>
+  <div class="projects-grid">
+
+    <div class="upwork-card fade-in">
+      <div class="upwork-card-header">
+        <div class="upwork-badge">
+          <div class="upwork-badge-dot"></div>
+          <div class="upwork-badge-text">Upwork · 5.0 ★ · MERN Stack · 200+ hrs</div>
+        </div>
+      </div>
+      <div class="upwork-card-stats">
+        <div class="upwork-stat">
+          <div class="upwork-card-stat-num">5.0 ★</div>
+          <div class="upwork-card-stat-label">Client Rating</div>
+        </div>
+        <div class="upwork-divider"></div>
+        <div class="upwork-stat">
+          <div class="upwork-card-stat-num">200+ hrs</div>
+          <div class="upwork-card-stat-label">Logged</div>
+        </div>
+        <div class="upwork-divider"></div>
+        <div class="upwork-stat">
+          <div class="upwork-card-stat-num">2 jobs</div>
+          <div class="upwork-card-stat-label">Completed</div>
+        </div>
+      </div>
+      <p class="upwork-card-desc">Delivered two full MERN stack contracts on Upwork with perfect 5-star ratings across 200+ billed hours — demonstrating reliable delivery, clear communication, and high output quality working directly with international clients.</p>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span> SaaS + Chrome Extension</div>
+      <div class="project-num">01</div>
+      <div class="project-title">Zenbee — Sales Intelligence Platform & Extension</div>
+      <p class="project-desc">Full frontend re-architecture of a B2B Sales Intelligence SaaS plus a companion Chrome extension that surfaces prospect insights directly in the browser. Analytics dashboards and lead management built end-to-end.</p>
+      <div class="project-tags">
+        <span class="project-tag">Angular 17</span><span class="project-tag">TypeScript</span><span class="project-tag">Chrome Extension</span><span class="project-tag">WebSockets</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span> Chrome Extension</div>
+      <div class="project-num">02</div>
+      <div class="project-title">EZ Brands — LinkedIn Lead Generation Extension</div>
+      <p class="project-desc">Chrome extension for automated LinkedIn lead discovery. Scrapes and qualifies prospect data, surfaces leads matching target criteria, and integrates with the EZ Brands platform — running seamlessly inside the LinkedIn UI.</p>
+      <div class="project-tags">
+        <span class="project-tag">Chrome Extension</span><span class="project-tag">JavaScript</span><span class="project-tag">LinkedIn DOM</span><span class="project-tag">Lead Gen</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span> Chrome Extension</div>
+      <div class="project-num">03</div>
+      <div class="project-title">EZ Brands — Facebook Outreach Extension</div>
+      <p class="project-desc">Chrome extension for Facebook-based lead generation and outreach automation — finding leads, sending friend requests, and managing contact workflows, all operating within the Facebook interface.</p>
+      <div class="project-tags">
+        <span class="project-tag">Chrome Extension</span><span class="project-tag">JavaScript</span><span class="project-tag">Facebook DOM</span><span class="project-tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span> Real-Time SDK</div>
+      <div class="project-num">04</div>
+      <div class="project-title">Vdotok Audio/Video SDK</div>
+      <p class="project-desc">Production JavaScript Audio/Video Calling SDK with WebRTC at the SDP level. Reduced live streaming latency from ~1 second to milliseconds. Offered to external developers with a free quota.</p>
+      <div class="project-tags">
+        <span class="project-tag">WebRTC</span><span class="project-tag">TypeScript</span><span class="project-tag">SDP</span><span class="project-tag">JS SDK</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span> Mobile SDK</div>
+      <div class="project-num">05</div>
+      <div class="project-title">Mobile Screen-Sharing SDK</div>
+      <p class="project-desc">JavaScript SDK enabling screen sharing on mobile web browsers where native support doesn't exist. Solved a hard browser API limitation through custom JS and WebRTC techniques.</p>
+      <div class="project-tags">
+        <span class="project-tag">JavaScript</span><span class="project-tag">WebRTC</span><span class="project-tag">Mobile Web</span><span class="project-tag">SDK</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-type"><span class="project-type-dot"></span> EdTech SaaS</div>
+      <div class="project-num">06</div>
+      <div class="project-title">Sibme — US-Based EdTech Platform</div>
+      <p class="project-desc">Core team member for 3 years on a successful US-based edtech SaaS. Full-stack ownership, analytics dashboards, DevOps. Product demand grew 128%. Report load time cut 25% with Redis caching.</p>
+      <div class="project-tags">
+        <span class="project-tag">Node.js</span><span class="project-tag">Angular</span><span class="project-tag">MySQL</span><span class="project-tag">Redis</span><span class="project-tag">AWS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-label">Let's talk</div>
+      <h2>Get In Touch</h2>
+      <p>Open to full-time remote roles, contract work, and interesting engineering challenges. Immediate joiner — no notice period.</p>
+      <div class="contact-links">
+        <a href="mailto:asadtechlead@gmail.com" class="contact-link"><span class="contact-link-icon">✉</span>asadtechlead@gmail.com</a>
+        <a href="tel:+923084618263" class="contact-link"><span class="contact-link-icon">📱</span>+92 308 4618263</a>
+        <a href="https://linkedin.com/in/asad-software-engineer" target="_blank" class="contact-link"><span class="contact-link-icon">in</span>linkedin.com/in/asad-software-engineer</a>
+        <a href="https://www.upwork.com" target="_blank" class="contact-link" style="border-color: rgba(20,168,0,0.3); color: #14a800;"><span class="contact-link-icon">U</span>Upwork — 5★ · 200+ hrs · MERN</a>
+        <a href="#" class="contact-link"><span class="contact-link-icon">📍</span>Lahore, Pakistan — Remote Ready</a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" placeholder="Jane Smith" />
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" placeholder="jane@company.com" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell me about the role or project..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Asad Mahmood</span> — Senior Full-Stack Engineer</p>
+  <p>Built with care · Lahore, Pakistan</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in, .timeline-item').forEach(el => observer.observe(el));
+  document.querySelectorAll('.timeline-item').forEach((item, i) => { item.style.transitionDelay = `${i * 0.1}s`; });
+
+  function handleSubmit() {
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#22c55e';
+    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3000);
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+    navLinks.forEach(link => { link.style.color = link.getAttribute('href') === `#${current}` ? 'var(--accent)' : ''; });
+  });
+</script>
+</body>
+</html>
