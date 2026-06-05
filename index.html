@@ -97,6 +97,12 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,6vw,3.5rem);l
 .facts{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.5rem}
 .fact{font-family:var(--mono);font-size:.78rem;color:var(--ink2);border:1px dashed var(--line);border-radius:999px;padding:.3rem .8rem}
 
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2.2rem;margin-top:2.2rem;padding-top:1.5rem;border-top:1px dashed var(--line)}
+.logos .lbl{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);width:100%}
+.logos img{height:24px;width:auto;opacity:.85}
+[data-theme="dark"] .logos img{filter:brightness(0) invert(1);opacity:.75}
+.logos .wm{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink2)}
+
 section{padding:3.2rem 0;border-top:1px solid var(--line)}
 .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);margin-bottom:.5rem}
@@ -230,6 +236,16 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
     <span class="fact">30% faster code reviews</span>
     <span class="fact">128% product demand growth · Sibme</span>
   </div>
+  <div class="logos fade">
+    <span class="lbl">Worked with &amp; built on</span>
+    <img src="assets/aws.svg" alt="Amazon Web Services" loading="lazy"/>
+    <img src="assets/upwork.svg" alt="Upwork" loading="lazy" style="height:20px"/>
+    <span class="wm">Croyten</span>
+    <span class="wm">VdoTok</span>
+    <span class="wm">Sibme</span>
+    <span class="wm">NetRoots</span>
+    <span class="wm">3S Solutions</span>
+  </div>
 </header>
 
 <section id="now" style="border-top:none;padding-top:0">
@@ -237,6 +253,17 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
     <span class="where">NOW</span>
     <span><b>Croyten (Foviro) · Zenbee</b> — B2B sales intelligence SaaS. Software architect &amp; team lead for 7 engineers across frontend, backend, and AI — architecture, AI features, client collaboration, and delivery.</span>
   </div>
+</section>
+
+<section id="youtube">
+  <p class="eyebrow fade">Content</p>
+  <h2 class="fade">Meet me in 2 minutes</h2>
+  <p class="sub fade">My 2-minute intro — plus practical videos on AI tools, web development, and security for developers.</p>
+  <div class="video-card fade" onclick="playIntro(this)" role="button" aria-label="Play intro video" tabindex="0" onkeydown="if(event.key==='Enter')playIntro(this)">
+    <img src="assets/yt-thumb.jpg" alt="Watch: Asad Mahmood — From Front-End Lead to Engineering Strategy" loading="lazy"/>
+    <div class="play"><span>▶</span></div>
+  </div>
+  <p style="margin-top:1rem;font-size:.92rem;color:var(--ink3)" class="fade">More on <a href="https://www.youtube.com/@asadtechlead">youtube.com/@asadtechlead</a></p>
 </section>
 
 <section id="skills">
@@ -427,16 +454,6 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
   </div>
 </section>
 
-<section id="youtube">
-  <p class="eyebrow fade">Content</p>
-  <h2 class="fade">I also make videos</h2>
-  <p class="sub fade">My 2-minute intro — plus practical videos on AI tools, web development, and security for developers.</p>
-  <div class="video-card fade" onclick="playIntro(this)" role="button" aria-label="Play intro video" tabindex="0" onkeydown="if(event.key==='Enter')playIntro(this)">
-    <img src="assets/yt-thumb.jpg" alt="Watch: Asad Mahmood — From Front-End Lead to Engineering Strategy" loading="lazy"/>
-    <div class="play"><span>▶</span></div>
-  </div>
-  <p style="margin-top:1rem;font-size:.92rem;color:var(--ink3)" class="fade">More on <a href="https://www.youtube.com/@asadtechlead">youtube.com/@asadtechlead</a></p>
-</section>
 
 <section id="contact">
   <p class="eyebrow fade">Let's talk</p>
