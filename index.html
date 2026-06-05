@@ -1,1204 +1,332 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Asad Mahmood — Senior Full-Stack Engineer</title>
-<meta name="description" content="Asad Mahmood: Senior Full-Stack Engineer with 10+ years expertise in Angular, React, Node.js, WebRTC, Chrome Extensions, and AWS. Remote-ready, immediate joiner based in Lahore. Delivering scalable web solutions and leading engineering teams."/>
-<meta name="keywords" content="Asad Mahmood, Senior Full-Stack Engineer, Angular, React, Node.js, WebRTC, Chrome Extensions, AWS, MERN, TypeScript, JavaScript, remote, Lahore, software engineer, web development, full-stack developer, lead engineer"/>
+<title>Asad Mahmood — Software Engineer & Team Lead · Software Architect</title>
+<meta name="description" content="Asad Mahmood — software engineer and team lead with 10+ years building secure, scalable web and mobile apps. Software architect at Croyten (Zenbee). Builder of InBill and KidSpin. Lahore, Pakistan."/>
+<link rel="canonical" href="https://asadtechlead.github.io/"/>
+<meta property="og:type" content="profile"/>
+<meta property="og:title" content="Asad Mahmood — Software Engineer & Team Lead"/>
+<meta property="og:description" content="10+ years building secure, scalable software. Software architect at Croyten. Builder of InBill (AI invoicing) and KidSpin."/>
+<meta property="og:url" content="https://asadtechlead.github.io/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="theme-color" content="#FAF7F2"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Asad Mahmood",
+  "jobTitle": "Software Engineer & Team Lead · Software Architect",
+  "worksFor": { "@type": "Organization", "name": "Croyten" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" },
+  "email": "mailto:asadtechlead@gmail.com",
+  "url": "https://asadtechlead.github.io/",
+  "sameAs": [
+    "https://www.linkedin.com/in/asad-software-engineer",
+    "https://github.com/asadtechlead",
+    "https://www.youtube.com/@asadtechlead",
+    "https://inbill.net",
+    "https://kidspin.zaions.com"
+  ],
+  "knowsAbout": ["Software architecture", "Web development", "Angular", ".NET", "TypeScript", "Cyber security", "AI development"]
+}
+</script>
 <style>
-/* ─── THEME TOKENS ─────────────────────────────────────────── */
-:root {
-  --accent:    #F59E0B;
-  --accent-h:  #D97706;
-  --green:     #22C55E;
-  --upwork:    #14A800;
-  --radius:    10px;
-  --transition: 0.25s ease;
+/* ── Calm editorial: warm paper, slate ink, one quiet teal accent ── */
+:root{
+  --paper:#FAF7F2; --paper2:#F3EEE6; --card:#FFFFFF;
+  --ink:#22272F; --ink2:#5A6170; --ink3:#8A8F9B;
+  --accent:#0E7569; --accent-soft:#E4F0EE;
+  --line:#E7E0D4; --shadow:0 1px 2px rgba(34,39,47,.04),0 12px 32px rgba(34,39,47,.06);
+  --r:14px;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Figtree',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
 }
-[data-theme="dark"] {
-  --bg:        #09090B;
-  --bg2:       #111115;
-  --bg3:       #18181C;
-  --card:      #111115;
-  --border:    #27272A;
-  --text:      #FAFAFA;
-  --text2:     #A1A1AA;
-  --text3:     #71717A;
-  --nav-bg:    rgba(9,9,11,0.92);
-  --shadow:    0 1px 3px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3);
-  --tag-bg:    #1C1C20;
-  --tag-text:  #A1A1AA;
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#15181E; --paper2:#1B1F27; --card:#1E232C;
+    --ink:#EDEAE3; --ink2:#A7ACB8; --ink3:#767C89;
+    --accent:#5CC0B2; --accent-soft:#1E3330;
+    --line:#2A303B; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35);
+  }
 }
-[data-theme="light"] {
-  --bg:        #FAFAFA;
-  --bg2:       #F4F4F5;
-  --bg3:       #EDEDF0;
-  --card:      #FFFFFF;
-  --border:    #E4E4E7;
-  --text:      #09090B;
-  --text2:     #52525B;
-  --text3:     #A1A1AA;
-  --nav-bg:    rgba(250,250,250,0.92);
-  --shadow:    0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
-  --tag-bg:    #F4F4F5;
-  --tag-text:  #52525B;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
 }
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:1.0625rem; line-height:1.7;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+/* soft paper grain */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.025'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+::selection{background:var(--accent);color:var(--paper)}
 
-/* ─── RESET ─────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-weight: 400;
-  line-height: 1.65;
-  transition: background var(--transition), color var(--transition);
-  overflow-x: hidden;
-}
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+.wrap{max-width:880px;margin:0 auto;padding:0 1.4rem;position:relative;z-index:1}
 
-/* ─── NAV ────────────────────────────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2.5rem;
-  height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-  transition: background var(--transition), border-color var(--transition);
-}
-.nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-.nav-logo em { color: var(--accent); font-style: normal; }
-.nav-center {
-  display: flex;
-  gap: 0.25rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.nav-center a {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text2);
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  transition: all 0.15s;
-}
-.nav-center a:hover, .nav-center a.active {
-  color: var(--text);
-  background: var(--bg3);
-}
-.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:880px;margin:0 auto;padding:.85rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.nav-links{display:flex;gap:1.3rem;font-size:.92rem;font-weight:500}
+.nav-links a{color:var(--ink2)}
+.nav-links a:hover{color:var(--accent);text-decoration:none}
+@media(max-width:640px){.nav-links{display:none}}
 
-/* Theme toggle */
-.theme-btn {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg2);
-  color: var(--text2);
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem;
-  transition: all 0.15s;
-}
-.theme-btn:hover { border-color: var(--accent); color: var(--accent); }
-[data-theme="dark"] .icon-sun { display: block; }
-[data-theme="dark"] .icon-moon { display: none; }
-[data-theme="light"] .icon-sun { display: none; }
-[data-theme="light"] .icon-moon { display: block; }
+/* hero */
+header{padding:5.5rem 0 4rem}
+.kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.12;letter-spacing:-.01em;max-width:21ch}
+.lede{margin-top:1.4rem;font-size:clamp(1.08rem,2.4vw,1.25rem);color:var(--ink2);max-width:56ch}
+.lede strong{color:var(--ink);font-weight:600}
+.meta-row{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.92rem;color:var(--ink3)}
+.meta-row span{display:flex;align-items:center;gap:.45rem}
+.cta-row{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.25rem;border-radius:999px;
+  font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--ink);background:var(--card);
+  box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease}
+.btn:hover{transform:translateY(-2px);text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.btn.primary{color:#10211E}}
 
-.hire-badge {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.75rem; font-weight: 500;
-  color: var(--green);
-  background: rgba(34,197,94,0.08);
-  border: 1px solid rgba(34,197,94,0.2);
-  border-radius: 20px;
-  padding: 0.3rem 0.75rem;
-}
-.hire-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%; background: var(--green);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+/* sections */
+section{padding:3.4rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);margin-bottom:.5rem}
+.sub{color:var(--ink2);max-width:60ch;margin-bottom:2rem}
 
-/* Mobile menu */
-.mobile-menu-btn {
-  display: none;
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg2);
-  color: var(--text);
-  cursor: pointer;
-  align-items: center; justify-content: center;
-  font-size: 1.1rem;
-}
-.mobile-nav {
-  display: none;
-  position: fixed;
-  top: 60px; left: 0; right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 2rem;
-  flex-direction: column;
-  gap: 0.25rem;
-  z-index: 199;
-}
-.mobile-nav a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text2);
-  padding: 0.6rem 0.5rem;
-  border-radius: 6px;
-  display: block;
-  transition: all 0.15s;
-}
-.mobile-nav a:hover { color: var(--text); background: var(--bg3); }
-.mobile-nav.open { display: flex; }
+/* currently strip */
+.current{display:flex;flex-wrap:wrap;gap:1rem;background:var(--accent-soft);border:1px solid var(--line);
+  border-radius:var(--r);padding:1.3rem 1.5rem;align-items:baseline}
+.current b{font-weight:700}
+.current .where{font-family:var(--mono);font-size:.82rem;color:var(--accent)}
 
-/* ─── LAYOUT HELPERS ─────────────────────────────────────────── */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
-section { padding: 6rem 0; }
+/* cards */
+.grid{display:grid;gap:1.1rem}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shadow);
+  transition:transform .18s ease}
+.card:hover{transform:translateY(-3px)}
+.card h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;margin-bottom:.5rem}
+.card p{font-size:.97rem;color:var(--ink2)}
+.card .links{margin-top:1rem;display:flex;gap:1.1rem;font-size:.9rem;font-weight:600}
+.tag{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:.2rem .55rem;margin-bottom:.9rem}
 
-/* ─── HERO ───────────────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding-top: 60px;
-  position: relative;
-  overflow: hidden;
-}
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(80px);
-}
-.orb1 { width: 500px; height: 500px; background: rgba(245,158,11,0.07); top: -100px; right: -100px; }
-.orb2 { width: 350px; height: 350px; background: rgba(34,197,94,0.05); bottom: 0; left: -100px; }
+/* experience */
+.xp{display:grid;gap:0}
+.xp-item{display:grid;grid-template-columns:150px 1fr;gap:1.4rem;padding:1.35rem 0;border-bottom:1px dashed var(--line)}
+.xp-item:last-child{border-bottom:none}
+.xp-when{font-family:var(--mono);font-size:.82rem;color:var(--ink3);padding-top:.25rem}
+.xp-item h3{font-size:1.05rem;font-weight:700}
+.xp-item .role{color:var(--accent);font-weight:600;font-size:.95rem}
+.xp-item p{font-size:.95rem;color:var(--ink2);margin-top:.3rem}
+@media(max-width:560px){.xp-item{grid-template-columns:1fr;gap:.2rem}}
 
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 5rem;
-  align-items: center;
-  position: relative; z-index: 1;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  margin-bottom: 1.25rem;
-}
-.hero-eyebrow::before { content: '//'; opacity: 0.5; }
-h1 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.8rem, 6vw, 4.75rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.25rem;
-  color: var(--text);
-}
-h1 .grad {
-  background: linear-gradient(135deg, var(--accent) 0%, #F97316 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-desc {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--text2);
-  max-width: 520px;
-  margin-bottom: 2rem;
-}
-.hero-desc strong { color: var(--text); font-weight: 600; }
-.hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+/* quote */
+blockquote{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--r);padding:1.8rem 2rem;box-shadow:var(--shadow)}
+blockquote p{font-family:var(--serif);font-size:1.15rem;line-height:1.6}
+blockquote footer{margin-top:1rem;font-size:.9rem;color:var(--ink2)}
+blockquote footer b{color:var(--ink)}
 
-.btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-weight: 600;
-  font-size: 0.88rem;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.15s;
-  line-height: 1;
-}
-.btn-solid { background: var(--accent); color: #000; }
-.btn-solid:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,158,11,0.3); }
-.btn-ghost { background: var(--bg2); color: var(--text); border: 1px solid var(--border); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+/* stack */
+.stack{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font-family:var(--mono);font-size:.82rem;padding:.4rem .8rem;border:1px solid var(--line);
+  border-radius:999px;background:var(--card);color:var(--ink2)}
 
-.hero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.chip {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  padding: 0.3rem 0.65rem;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  transition: all 0.15s;
-}
-.chip:hover { border-color: var(--accent); color: var(--accent); }
+/* footer */
+footer.site{padding:3.5rem 0 4.5rem;border-top:1px solid var(--line);text-align:center}
+footer.site h2{margin-bottom:1rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;margin:1.6rem 0;font-weight:600}
+.fine{font-size:.85rem;color:var(--ink3);margin-top:2rem}
 
-/* Hero right — stat card */
-.hero-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  width: 260px;
-  box-shadow: var(--shadow);
-  flex-shrink: 0;
-  transition: background var(--transition), border-color var(--transition);
-}
-.hero-card-stat {
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--border);
-  text-align: center;
-  transition: background 0.15s;
-}
-.hero-card-stat:last-child { border-bottom: none; }
-.hero-card-stat:hover { background: var(--bg3); }
-.stat-n {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 2.25rem;
-  line-height: 1;
-  color: var(--accent);
-  margin-bottom: 0.3rem;
-}
-.stat-l {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.hero-available {
-  padding: 1rem 1.5rem;
-  display: flex; align-items: center; gap: 0.75rem;
-  background: rgba(34,197,94,0.06);
-  border-top: 1px solid rgba(34,197,94,0.15);
-}
-.avail-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; animation: pulse 2s infinite; }
-.avail-text { font-size: 0.75rem; font-weight: 500; color: var(--green); line-height: 1.4; }
-.avail-sub { font-size: 0.68rem; color: var(--text3); font-weight: 400; margin-top: 0.1rem; }
-
-/* ─── SOCIAL PROOF BAR ───────────────────────────────────────── */
-.proof-bar {
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  transition: background var(--transition);
-}
-.proof-inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;
-  display: flex; align-items: center; gap: 2rem;
-  height: 64px;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-.proof-item {
-  display: flex; align-items: center; gap: 0.6rem;
-  font-size: 0.82rem;
-  color: var(--text2);
-  white-space: nowrap;
-}
-.proof-item strong { color: var(--text); font-weight: 600; }
-.proof-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
-.upwork-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--upwork); animation: pulse 2s infinite; }
-
-/* ─── SECTIONS ───────────────────────────────────────────────── */
-.s-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.75rem;
-  display: inline-flex; align-items: center; gap: 0.5rem;
-}
-.s-label::before { content: '//'; opacity: 0.5; }
-.s-sub {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--text2);
-  max-width: 700px;
-  margin-bottom: 3rem;
-}
-h2 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  margin-bottom: 1.5rem;
-}
-
-/* ─── SKILLS ─────────────────────────────────────────────────── */
-#skills .s-sub { max-width: 600px; }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.sk-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  transition: all var(--transition);
-  display: flex; flex-direction: column;
-}
-.sk-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
-.sk-icon { font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; }
-.sk-title { font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: 0.75rem; }
-.sk-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.sk-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  padding: 0.25rem 0.6rem;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border-radius: 4px;
-}
-
-/* ─── EXPERIENCE ─────────────────────────────────────────────── */
-.exp-list {
-  position: relative;
-  padding-left: 1.5rem;
-}
-.exp-list::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-}
-.exp-item {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 2.5rem;
-  opacity: 0; transform: translateY(20px);
-  transition: all 0.5s ease;
-}
-.exp-item.visible { opacity: 1; transform: translateY(0); }
-.exp-item::before {
-  content: '';
-  position: absolute;
-  left: -4px;
-  top: 0.35rem;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--bg);
-  box-shadow: 0 0 0 2px rgba(245,158,11,0.4);
-}
-.exp-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: all var(--transition);
-}
-.exp-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
-.exp-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  margin-bottom: 0.5rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.exp-title { font-weight: 700; font-size: 1.1rem; color: var(--text); }
-.exp-date { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 0.05em; white-space: nowrap; }
-.exp-company { font-size: 0.9rem; color: var(--text2); margin-bottom: 1rem; }
-.exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.exp-points li { font-size: 0.9rem; color: var(--text3); padding-left: 1.25rem; position: relative; line-height: 1.6; }
-.exp-points li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; top: 0.15rem; }
-.exp-stack { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.exp-stack span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  padding: 0.2rem 0.55rem;
-  background: var(--tag-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--tag-text);
-  letter-spacing: 0.05em;
-}
-
-/* ─── PROJECTS ───────────────────────────────────────────────── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-.proj-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: all var(--transition);
-  position: relative;
-  overflow: hidden;
-  display: flex; flex-direction: column;
-}
-.proj-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
-.proj-type {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.75rem;
-  display: flex; align-items: center; gap: 0.4rem;
-}
-.proj-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
-.proj-num {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 2.75rem;
-  line-height: 1;
-  color: var(--border);
-  margin-bottom: 0.75rem;
-  transition: color 0.2s;
-}
-.proj-card:hover .proj-num { color: rgba(245,158,11,0.12); }
-.proj-title { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.6rem; line-height: 1.35; }
-.proj-desc { font-size: 0.86rem; color: var(--text2); line-height: 1.65; margin-bottom: 1rem; flex: 1; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; }
-.proj-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem;
-  padding: 0.2rem 0.5rem;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border-radius: 4px;
-}
-
-/* Upwork card internals */
-.uw-logo {
-  width: 48px; height: 48px;
-  background: var(--upwork);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: white;
-  flex-shrink: 0;
-}
-.uw-content { flex: 1; }
-.uw-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--upwork);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-}
-.uw-title { font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
-.uw-desc { font-size: 0.86rem; color: var(--text2); line-height: 1.6; }
-.uw-stats { display: flex; gap: 2rem; flex-shrink: 0; }
-.uw-stat { text-align: center; }
-.uw-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--upwork); line-height: 1; }
-.uw-slab { font-size: 0.7rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; font-weight: 500; }
-
-/* ─── TESTIMONIALS ───────────────────────────────────────────── */
-#testimonials {
-  background: var(--bg2);
-}
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-.testimonial-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: all var(--transition);
-  display: flex; flex-direction: column;
-}
-.testimonial-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
-.testimonial-quote { font-size: 0.95rem; color: var(--text2); line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
-.testimonial-author { font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
-.testimonial-title { font-size: 0.8rem; color: var(--text3); }
-
-/* ─── CONTACT ──────────────────────────────────────────────────── */
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: var(--shadow);
-  transition: background var(--transition), border-color var(--transition);
-}
-.contact-info p { font-size: 0.95rem; color: var(--text2); margin-bottom: 2rem; line-height: 1.7; }
-.clinks { display: flex; flex-direction: column; gap: 0.6rem; }
-.clink {
-  display: flex; align-items: center; gap: 0.85rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.88rem;
-  color: var(--text2);
-  transition: all 0.15s;
-}
-.clink:hover { border-color: var(--accent); color: var(--text); transform: translateX(3px); }
-.clink.upwork { border-color: rgba(20,168,0,0.25); color: var(--upwork); }
-.clink.upwork:hover { border-color: var(--upwork); background: rgba(20,168,0,0.04); }
-.clink-icon { width: 20px; text-align: center; flex-shrink: 0; font-size: 0.95rem; }
-
-.contact-form { display: flex; flex-direction: column; gap: 1rem; }
-.fg { display: flex; flex-direction: column; gap: 0.4rem; }
-.fg label { font-size: 0.78rem; font-weight: 600; color: var(--text2); letter-spacing: 0.02em; }
-.fg input, .fg textarea {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  font-family: inherit;
-  font-size: 0.9rem;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.15s, background var(--transition);
-  resize: vertical;
-}
-.fg input:focus, .fg textarea:focus { border-color: var(--accent); }
-.fg textarea { min-height: 110px; }
-.fg input::placeholder, .fg textarea::placeholder { color: var(--text3); }
-.form-btn {
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.85rem;
-  background: linear-gradient(135deg, var(--accent), #F97316);
-  color: #000;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: opacity 0.15s, transform 0.15s;
-}
-.form-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-
-/* ─── FOOTER ────────────────────────────────────────────────────── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.75rem 2.5rem;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.8rem;
-  color: var(--text3);
-}
-footer span { color: var(--accent); }
-
-/* ─── ANIMATIONS ─────────────────────────────────────────────────── */
-.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-.hero-tag-anim { animation: slideUp 0.5s 0.1s both; }
-.hero-h1-anim  { animation: slideUp 0.5s 0.2s both; }
-.hero-p-anim   { animation: slideUp 0.5s 0.3s both; }
-.hero-a-anim   { animation: slideUp 0.5s 0.4s both; }
-.hero-c-anim   { animation: slideUp 0.5s 0.5s both; }
-.hero-r-anim   { animation: slideUp 0.6s 0.25s both; }
-@keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-
-/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .proj-upwork { grid-column: 1 / -1; }
-}
-@media (max-width: 768px) {
-  .nav-center { display: none; }
-  .mobile-menu-btn { display: flex; }
-  .hire-badge span { display: none; }
-  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  /* Stats 2x2 grid on mobile */
-  .hero-card { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
-  .hero-card-stat { border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
-  .hero-card-stat:nth-child(2n) { border-right: none; }
-  .hero-card-stat:nth-last-child(-n+3) { border-bottom: none; }
-  .hero-available { grid-column: 1 / -1; border-top: 1px solid rgba(34,197,94,0.15); }
-  .skills-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .proj-upwork { flex-direction: column; gap: 1.5rem; }
-  .uw-stats { width: 100%; justify-content: space-around; }
-  .exp-item { grid-template-columns: 1fr; gap: 0.25rem; padding-left: 1.75rem; }
-  .exp-list::before { left: 0; }
-  .exp-item::before { left: -4px; }
-  .contact-wrap { grid-template-columns: 1fr; padding: 1.75rem; gap: 2rem; }
-  section { padding: 4rem 0; }
-  .container { padding: 0 1.25rem; }
-  nav { padding: 0 1.25rem; }
-  footer { padding: 1.25rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-  .proof-inner { height: auto; padding: 1rem 1.25rem; gap: 0.6rem; flex-wrap: wrap; }
-  .proof-sep { display: none; }
-  h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
-  .hero-desc { font-size: 0.95rem; }
-  .s-sub { font-size: 0.95rem; margin-bottom: 2rem; }
-}
-/* Small phones — iPhone SE, Galaxy A */
-@media (max-width: 390px) {
-  h1 { font-size: 1.9rem; }
-  .stat-n { font-size: 1.75rem; }
-  .stat-l { font-size: 0.62rem; }
-  .hero-card-stat { padding: 1rem; }
-  .hero-card-stat:nth-child(2n) { border-right: 1px solid var(--border); }
-  .hero-card-stat:nth-last-child(-n+2) { border-bottom: none; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { justify-content: center; }
-  .btn { padding: 0.75rem 1.25rem; font-size: 0.85rem; }
-  .proof-item { font-size: 0.73rem; }
-  .hero-eyebrow { font-size: 0.62rem; }
-  .sk-card { padding: 1.25rem; }
-  .proj-card { padding: 1.25rem; }
-}
+/* reveal */
+.fade{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:none}
+header .fade:nth-child(1){transition-delay:.05s}
+header .fade:nth-child(2){transition-delay:.12s}
+header .fade:nth-child(3){transition-delay:.2s}
+header .fade:nth-child(4){transition-delay:.28s}
+header .fade:nth-child(5){transition-delay:.36s}
 </style>
 </head>
-
 <body>
 
-<!-- ─── NAV ─────────────────────────────────── -->
 <nav>
-  <a href="#hero" class="nav-logo">Asad<em>.</em></a>
-  <div class="nav-center">
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="nav-right">
-    <div class="hire-badge">
-      <span class="hire-dot"></span>
-      <span>Open to work</span>
+  <div class="nav-in">
+    <a class="brand" href="#top">Asad Mahmood</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#products">Products</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </div>
-    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
-      <span class="icon-sun">☀️</span>
-      <span class="icon-moon">🌙</span>
-    </button>
-    <button class="mobile-menu-btn" onclick="toggleMenu()" id="menuBtn">☰</button>
   </div>
 </nav>
 
-<div class="mobile-nav" id="mobileNav">
-  <a href="#skills" onclick="closeMenu()">Skills</a>
-  <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="#projects" onclick="closeMenu()">Projects</a>
-  <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-</div>
+<div class="wrap" id="top">
 
-<!-- ─── HERO ─────────────────────────────────── -->
-<section id="hero">
-  <div class="orb1 hero-orb"></div>
-  <div class="orb2 hero-orb"></div>
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-eyebrow hero-tag-anim">Senior Full-Stack Engineer · 10+ Years</div>
-        <h1 class="hero-h1-anim">I build things<br/>that <span class="grad">actually scale.</span></h1>
-        <p class="hero-desc hero-p-anim">
-          From <strong>WebRTC at the SDP level</strong> to <strong>full-stack MERN APIs</strong>, 
-          <strong>Chrome extensions</strong>, and <strong>AWS infrastructure</strong> — 
-          I own features end-to-end and lead teams that ship. Angular · React · Node.js · TypeScript.
-        </p>
-        <div class="hero-actions hero-a-anim">
-          <a href="#contact" class="btn btn-solid">Get in touch →</a>
-          <a href="/Asad_Mahmood_Resume.pdf" target="_blank" class="btn btn-ghost">⬇ Download CV</a>
-        </div>
-        <div class="hero-chips hero-c-anim">
-          <span class="chip">Angular 17</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">TypeScript</span><span class="chip">WebRTC</span><span class="chip">Chrome Extensions</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">PostgreSQL</span>
-        </div>
+<header>
+  <p class="kicker fade">Software Engineer · Team Lead · Software Architect</p>
+  <h1 class="fade">Calm, secure software — built and shipped with care.</h1>
+  <p class="lede fade">I'm Asad — a software engineer with <strong>10+ years</strong> of experience. I lead a team of 7 engineers as a <strong>software architect at Croyten</strong>, and I build my own products end&nbsp;to&nbsp;end. Security first, AI&nbsp;everywhere it helps.</p>
+  <div class="meta-row fade">
+    <span>📍 Lahore, Pakistan</span>
+    <span>🟢 Open to lead &amp; architect roles</span>
+    <span>🔐 OWASP-minded</span>
+    <span>🤖 Claude Certified</span>
+  </div>
+  <div class="cta-row fade">
+    <a class="btn primary" href="mailto:asadtechlead@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/asad-software-engineer">LinkedIn</a>
+    <a class="btn" href="Asad_Mahmood_Resume.pdf" download>Resume (PDF)</a>
+  </div>
+</header>
+
+<section id="now" class="fade" style="border-top:none;padding-top:0">
+  <div class="current">
+    <span class="where">NOW</span>
+    <span><b>Croyten · Zenbee</b> — AI sales platform (lead generation, CRM workflows, email outreach). I lead architecture, AI features, and delivery with a team of 7 engineers.</span>
+  </div>
+</section>
+
+<section id="work">
+  <h2 class="fade">What I do</h2>
+  <p class="sub fade">Three things, done consistently for a decade.</p>
+  <div class="grid three">
+    <div class="card fade">
+      <span class="tag">Architecture</span>
+      <h3>Design &amp; lead</h3>
+      <p>System architecture, technical decisions, and leading engineers across frontend, backend, and AI — from requirement to release.</p>
+    </div>
+    <div class="card fade">
+      <span class="tag">Security</span>
+      <h3>Build it safe</h3>
+      <p>Every design starts with the OWASP Top Ten in mind — secure SDKs, safe auth flows, and architectures that hold up under review.</p>
+    </div>
+    <div class="card fade">
+      <span class="tag">AI delivery</span>
+      <h3>Ship fast with AI</h3>
+      <p>Claude Code, MCP servers, and AI APIs in my daily workflow — a full pricing-system redesign went from idea to client-ready in hours.</p>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <h2 class="fade">Products I've built</h2>
+  <p class="sub fade">Designed, coded, and shipped end to end — on my own time.</p>
+  <div class="grid two">
+    <div class="card fade">
+      <span class="tag">AI · Invoicing</span>
+      <h3>InBill</h3>
+      <p>Free invoice software and AI invoice generator for freelancers — you talk, it makes the invoice. No forms, no friction.</p>
+      <div class="links">
+        <a href="https://inbill.net">inbill.net</a>
+        <a href="https://play.google.com/store/apps/details?id=net.inbill">Google Play</a>
       </div>
-      <div class="hero-right hero-r-anim">
-        <div class="hero-card">
-          <div class="hero-card-stat">
-            <div class="stat-n">10+</div>
-            <div class="stat-l">Years shipped</div>
-          </div>
-          <div class="hero-card-stat">
-            <div class="stat-n">50%</div>
-            <div class="stat-l">AWS cost cut</div>
-          </div>
-          <div class="hero-card-stat">
-            <div class="stat-n">65%</div>
-            <div class="stat-l">Bug density cut</div>
-          </div>
-          <div class="hero-card-stat">
-            <div class="stat-n">5★</div>
-            <div class="stat-l">Upwork rating</div>
-          </div>
-          <div class="hero-available">
-            <div class="avail-dot"></div>
-            <div class="avail-text">
-              Immediate joiner
-              <div class="avail-sub">Lahore · Remote · Any timezone</div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="card fade">
+      <span class="tag">Kids · Learning</span>
+      <h3>KidSpin</h3>
+      <p>Bilingual (English + Urdu) preschool learning app — ABC, 123, alif bay pay, phonics and mini-games for ages 2–7. Free, ad-light, no login.</p>
+      <div class="links">
+        <a href="https://kidspin.zaions.com">kidspin.zaions.com</a>
+        <a href="https://play.google.com/store/apps/details?id=com.asadtechlead.kidspin">Google Play</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SOCIAL PROOF BAR ───────────────────────────────────────── -->
-<div class="proof-bar">
-  <div class="proof-inner">
-    <div class="proof-item"><strong>5.0 ★</strong> on Upwork</div>
-    <div class="proof-sep"></div>
-    <div class="proof-item"><strong>200+</strong> hrs billed · Full-Stack MERN</div>
-    <div class="proof-sep"></div>
-    <div class="proof-item"><strong>3 Chrome extensions</strong> in production</div>
-    <div class="proof-sep"></div>
-    <div class="proof-item"><strong>5+ engineers</strong> led at Foviro</div>
-    <div class="proof-sep"></div>
-    <div class="proof-item"><strong>30%</strong> faster code reviews</div>
-    <div class="proof-sep"></div>
-    <div class="proof-item"><strong>128%</strong> product demand growth · Sibme</div>
-  </div>
-</div>
-
-<!-- ─── SKILLS ─────────────────────────────────────────────────── -->
-<section id="skills">
-  <div class="container">
-    <div class="s-label fade-up">Expertise</div>
-    <h2 class="fade-up">What I bring to your team</h2>
-    <p class="s-sub fade-up">A decade of building across the full stack — from pixel-perfect UIs to low-latency real-time systems and cloud infrastructure.</p>
-
-    <div class="skills-grid">
-      <div class="sk-card fade-up">
-        <div class="sk-icon">⚡</div>
-        <div class="sk-title">Frontend Engineering</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Angular 4–17</span><span class="sk-tag">React</span><span class="sk-tag">TypeScript</span><span class="sk-tag">Next.js</span><span class="sk-tag">RxJS</span><span class="sk-tag">Tailwind CSS</span><span class="sk-tag">PrimeNG</span><span class="sk-tag">HTML5</span>
-        </div>
-      </div>
-
-      <div class="sk-card fade-up">
-        <div class="sk-icon">🔧</div>
-        <div class="sk-title">Backend & APIs</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Node.js</span><span class="sk-tag">Express</span><span class="sk-tag">PHP/Laravel</span><span class="sk-tag">REST APIs</span><span class="sk-tag">WebSockets</span><span class="sk-tag">OAuth</span><span class="sk-tag">Prisma</span>
-        </div>
-      </div>
-
-      <div class="sk-card fade-up">
-        <div class="sk-icon">🧩</div>
-        <div class="sk-title">Chrome Extensions</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Manifest V3</span><span class="sk-tag">Content Scripts</span><span class="sk-tag">Background Workers</span><span class="sk-tag">DOM Automation</span><span class="sk-tag">LinkedIn APIs</span><span class="sk-tag">Lead Generation</span>
-        </div>
-      </div>
-
-      <div class="sk-card fade-up">
-        <div class="sk-icon">📡</div>
-        <div class="sk-title">Real-Time Systems</div>
-        <div class="sk-tags">
-          <span class="sk-tag">WebRTC (SDP-level)</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Live Streaming</span><span class="sk-tag">JS SDK Dev</span><span class="sk-tag">Screen Sharing</span>
-        </div>
-      </div>
-
-      <div class="sk-card fade-up">
-        <div class="sk-icon">☁️</div>
-        <div class="sk-title">Cloud & DevOps</div>
-        <div class="sk-tags">
-          <span class="sk-tag">AWS EC2</span><span class="sk-tag">AWS Cost Optimization</span><span class="sk-tag">Docker</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">CI/CD</span><span class="sk-tag">Linux</span><span class="sk-tag">Git</span>
-        </div>
-      </div>
-
-      <div class="sk-card fade-up">
-        <div class="sk-icon">🗄️</div>
-        <div class="sk-title">Data & Architecture</div>
-        <div class="sk-tags">
-          <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">Redis</span><span class="sk-tag">System Design</span><span class="sk-tag">Analytics Dashboards</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── EXPERIENCE ─────────────────────────────────────────────── -->
 <section id="experience">
-  <div class="container">
-    <div class="s-label fade-up">Career</div>
-    <h2 class="fade-up">10 years. Real impact. Real numbers.</h2>
-    <p class="s-sub fade-up">I don't just write code — I lead teams, cut costs, reduce bugs, and drive product growth.</p>
-
-    <div class="exp-list">
-      <div class="exp-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-title">Lead Frontend Engineer</div>
-            <div class="exp-date">Mar 2024 — Now</div>
-          </div>
-          <div class="exp-company">Foviro · Lahore</div>
-          <ul class="exp-points">
-            <li>Leading all things frontend for Zenbee, a B2B Sales Intelligence SaaS — from architecture to team culture to cloud costs.</li>
-            <li>Re-architected the entire frontend from legacy HTML/Bootstrap to <strong>Angular 17 + TypeScript</strong>, wiping out a persistent backlog of stability issues</li>
-            <li>Built <strong>Zenbee's Chrome extension</strong> — surfaces sales intelligence directly inside the browser workflow</li>
-            <li>Audited Zenbee's <strong>AWS infrastructure</strong> — right-sized resources and eliminated waste, cutting cloud costs by <strong>50%</strong></li>
-            <li>Established coding standards and PR practices that cut review cycle time by <strong>30%</strong></li>
-            <li>Led a team of <strong>5+ engineers</strong> across sprint planning, architecture, and mentorship</li>
-          </ul>
-          <div class="exp-stack">
-            <span class="sk-tag">Angular 17</span><span class="sk-tag">TypeScript</span><span class="sk-tag">RxJS</span><span class="sk-tag">Chrome Extension</span><span class="sk-tag">AWS</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">Docker</span>
-          </div>
-        </div>
+  <h2 class="fade">Experience</h2>
+  <p class="sub fade">A steady path from front-end developer to architect.</p>
+  <div class="xp">
+    <div class="xp-item fade">
+      <div class="xp-when">2024 — now</div>
+      <div>
+        <h3>Croyten <span class="role">· Software Architect &amp; Team Lead</span></h3>
+        <p>Leading a team of 7 on Zenbee, an AI sales platform — architecture, product decisions, AI features, and end-to-end delivery. Stack: .NET, Angular, TypeScript, RxJS, Docker, Azure DevOps.</p>
       </div>
-
-      <div class="exp-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-title">Lead Frontend Developer — JS SDK Team</div>
-            <div class="exp-date">Jul 2021 — Dec 2023</div>
-          </div>
-          <div class="exp-company">Norgic / Vdotok · Lahore</div>
-          <ul class="exp-points">
-            <li>Led the team building two production SDKs — a Messaging SDK (open source) and an Audio/Video Calling SDK — used by external developer communities.</li>
-            <li>Implemented <strong>WebRTC at the SDP level</strong>, reducing live streaming latency from ~1 second to <strong>milliseconds</strong></li>
-            <li>Built a <strong>screen-sharing JavaScript SDK</strong> for mobile browsers — a capability not natively supported</li>
-            <li>Led 6-month R&D effort that cut SDK bug density by <strong>65%</strong></li>
-          </ul>
-          <div class="exp-stack">
-            <span class="sk-tag">TypeScript</span><span class="sk-tag">ES6+</span><span class="sk-tag">WebRTC</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Node.js</span><span class="sk-tag">JS SDKs</span>
-          </div>
-        </div>
+    </div>
+    <div class="xp-item fade">
+      <div class="xp-when">2021 — 2025</div>
+      <div>
+        <h3>VdoTok <span class="role">· Frontend Team Lead</span></h3>
+        <p>Led development of JavaScript SDKs used by external developers — messaging and audio/video calling — designed secure, OWASP-hardened architectures.</p>
       </div>
-
-      <div class="exp-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-title">Senior Full-Stack Engineer</div>
-            <div class="exp-date">Jun 2018 — Aug 2021</div>
-          </div>
-          <div class="exp-company">3S Solutions · Sibme (USA)</div>
-          <ul class="exp-points">
-            <li>Core team member for three years on Sibme, a US-based edtech SaaS. Full ownership from architecture to DevOps.</li>
-            <li>Led a team of 4 engineers — product demand grew <strong>128%</strong> during tenure</li>
-            <li>Built analytics dashboards and reporting tools for <strong>thousands of daily users</strong></li>
-            <li>Cut analytics report load time by <strong>25%</strong> via Redis caching on complex SQL queries</li>
-          </ul>
-          <div class="exp-stack">
-            <span class="sk-tag">Angular</span><span class="sk-tag">Node.js</span><span class="sk-tag">PHP/Laravel</span><span class="sk-tag">MySQL</span><span class="sk-tag">Redis</span><span class="sk-tag">AWS</span>
-          </div>
-        </div>
+    </div>
+    <div class="xp-item fade">
+      <div class="xp-when">2018 — 2021</div>
+      <div>
+        <h3>3S Solutions <span class="role">· Lead Engineer</span></h3>
+        <p>Lead engineer on Sibme, a video-coaching platform serving thousands of users — security, architecture, DevOps, and team leadership.</p>
       </div>
-
-      <div class="exp-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-title">Senior Node.js & Angular Developer</div>
-            <div class="exp-date">Dec 2017 — Jun 2018</div>
-          </div>
-          <div class="exp-company">NetRoots Technologies · Lahore</div>
-          <ul class="exp-points">
-            <li>Led hybrid mobile app development — achieved <strong>40% improvement</strong> in customer satisfaction</li>
-            <li>Delivered the Eye Doctor App — data management, report sharing, and analytics for ophthalmologists</li>
-          </ul>
-          <div class="exp-stack">
-            <span class="sk-tag">Node.js</span><span class="sk-tag">Angular</span><span class="sk-tag">Ionic</span><span class="sk-tag">REST APIs</span>
-          </div>
-        </div>
+    </div>
+    <div class="xp-item fade">
+      <div class="xp-when">2015 — 2018</div>
+      <div>
+        <h3>Earlier years <span class="role">· Full-Stack &amp; Mobile</span></h3>
+        <p>PHP → full-stack → hybrid mobile apps (Ionic) at Bluehorntech, Shayan Solutions, and NetRoots — where the curiosity started.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── PROJECTS ───────────────────────────────────────────────── -->
-<section id="projects">
-  <div class="container">
-    <div class="s-label fade-up">Selected Work</div>
-    <h2 class="fade-up">Things I've built</h2>
-    <p class="s-sub fade-up">Production projects — SaaS platforms, Chrome extensions, real-time SDKs, and more.</p>
+<section id="word">
+  <h2 class="fade">A kind word</h2>
+  <blockquote class="fade">
+    <p>"Asad's expertise in building the Zenbee B2B sales intelligence platform was crucial. His work with Mongo, Angular, .NET, Redis, and AI technologies delivered a robust and scalable solution."</p>
+    <footer><b>Amine Mekkaoui</b> — CEO, Zenbee</footer>
+  </blockquote>
+</section>
 
-    <div class="projects-grid">
-      <div class="proj-card proj-upwork fade-up">
-        <div class="uw-logo">U</div>
-        <div class="uw-content">
-          <div class="uw-label">Upwork · Verified Freelancer</div>
-          <div class="uw-title">MERN Stack Contracts — Perfect Rating</div>
-          <p class="uw-desc">Two completed MERN stack contracts with perfect 5-star ratings across 200+ billed hours, working directly with international clients.</p>
-        </div>
-        <div class="uw-stats">
-          <div class="uw-stat">
-            <div class="uw-num">5.0</div>
-            <div class="uw-slab">Rating</div>
-          </div>
-          <div class="uw-stat">
-            <div class="uw-num">200+</div>
-            <div class="uw-slab">Hours</div>
-          </div>
-          <div class="uw-stat">
-            <div class="uw-num">2</div>
-            <div class="uw-slab">Jobs</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-type"><span class="proj-dot"></span>SaaS + Chrome Extension</div>
-        <div class="proj-num">01</div>
-        <div class="proj-title">Zenbee — B2B Sales Intelligence Platform</div>
-        <p class="proj-desc">Full frontend re-architecture + Chrome extension. Built analytics dashboards, lead management, and a browser extension that surfaces sales insights directly in the workflow.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Angular 17</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Chrome Ext</span><span class="proj-tag">WebSockets</span><span class="proj-tag">AWS</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-type"><span class="proj-dot"></span>Chrome Extension</div>
-        <div class="proj-num">02</div>
-        <div class="proj-title">EZ Brands — LinkedIn Lead Gen Extension</div>
-        <p class="proj-desc">Automated LinkedIn lead discovery extension. Scrapes, qualifies, and surfaces prospects matching target criteria — fully embedded in the LinkedIn UI.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Chrome Extension</span><span class="proj-tag">JavaScript</span><span class="proj-tag">DOM</span><span class="proj-tag">Lead Gen</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-type"><span class="proj-dot"></span>Chrome Extension</div>
-        <div class="proj-num">03</div>
-        <div class="proj-title">EZ Brands — Facebook Outreach Extension</div>
-        <p class="proj-desc">Lead generation and outreach automation on Facebook — finding leads, sending friend requests, and managing contact workflows, all from within the FB interface.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Chrome Extension</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Automation</span><span class="proj-tag">DOM</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-type"><span class="proj-dot"></span>Real-Time SDK</div>
-        <div class="proj-num">04</div>
-        <div class="proj-title">Vdotok Audio/Video Calling SDK</div>
-        <p class="proj-desc">Production JS Audio/Video SDK built at the WebRTC SDP level. Reduced live latency from ~1s to milliseconds. Shipped to an external developer community with a free quota.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">WebRTC</span><span class="proj-tag">TypeScript</span><span class="sk-tag">SDP</span><span class="sk-tag">SDK</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-type"><span class="proj-dot"></span>Mobile SDK</div>
-        <div class="proj-num">05</div>
-        <div class="proj-title">Mobile Screen-Sharing SDK</div>
-        <p class="proj-desc">JS SDK enabling screen sharing on mobile web browsers — a capability the browser doesn't natively support. Solved at the WebRTC layer with custom JS techniques.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">JavaScript</span><span class="proj-tag">WebRTC</span><span class="proj-tag">Mobile Web</span><span class="proj-tag">SDK</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-type"><span class="proj-dot"></span>EdTech SaaS</div>
-        <div class="proj-num">06</div>
-        <div class="proj-title">Sibme — US EdTech Platform</div>
-        <p class="proj-desc">Core team for 3 years on a US edtech SaaS. Full-stack ownership, analytics dashboards, DevOps. Demand grew 128%. Report load time cut 25% with Redis caching.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Node.js</span><span class="proj-tag">Angular</span><span class="proj-tag">MySQL</span><span class="proj-tag">Redis</span><span class="proj-tag">AWS</span>
-        </div>
-      </div>
-
-    </div>
+<section id="stack">
+  <h2 class="fade">Tech I use</h2>
+  <p class="sub fade">Chosen for the job, not the trend.</p>
+  <div class="stack fade">
+    <span class="chip">Angular</span><span class="chip">.NET</span><span class="chip">TypeScript</span>
+    <span class="chip">RxJS</span><span class="chip">Node.js</span><span class="chip">Flutter / Dart</span>
+    <span class="chip">Kotlin</span><span class="chip">Docker</span><span class="chip">Azure DevOps</span>
+    <span class="chip">Supabase</span><span class="chip">Claude Code</span><span class="chip">MCP</span>
   </div>
 </section>
 
-<!-- ─── TESTIMONIALS ───────────────────────────────────────────── -->
-<section id="testimonials">
-  <div class="container">
-    <div class="s-label fade-up">What people say</div>
-    <h2 class="fade-up">Trusted by clients worldwide</h2>
-    <p class="s-sub fade-up">Here's what some of my clients and colleagues have to say about my work and collaboration.</p>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card fade-up">
-        <p class="testimonial-quote">"Asad's expertise in building the Zenbee B2B sales intelligence platform was crucial. His work with Mongo, Angular, .NET, Redis, and AI technologies delivered a robust and scalable solution."</p>
-        <div class="testimonial-author">Amine Mekkaoui</div>
-        <div class="testimonial-title">CEO at Zenbee</div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <p class="testimonial-quote">"Albert Williams was instrumental in our Perforce MERN stack project on Upwork. His deep understanding of the MERN stack and ability to deliver high-quality code was exceptional."</p>
-        <div class="testimonial-author">Albert Williams</div>
-        <div class="testimonial-title">Project Manager at Perforce</div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <p class="testimonial-quote">"Joe's work on the EZ Brand Chrome extensions significantly boosted our lead generation efforts. His innovative approach and technical skills are truly impressive."</p>
-        <div class="testimonial-author">Joe</div>
-        <div class="testimonial-title">Founder of EZ Brands</div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <p class="testimonial-quote">"Antonio Carter's development of the Facebook Chrome extension revolutionized our outreach. His solution was efficient, effective, and seamlessly integrated with our workflow."</p>
-        <div class="testimonial-author">Antonio Carter</div>
-        <div class="testimonial-title">Marketing Lead</div>
-      </div>
-    </div>
+<footer class="site" id="contact">
+  <h2 class="fade">Let's build something that matters.</h2>
+  <p class="sub fade" style="margin:0 auto">Hiring for a lead or architect role — or want to talk AI, web, or security?</p>
+  <div class="cta-row fade" style="justify-content:center">
+    <a class="btn primary" href="mailto:asadtechlead@gmail.com">asadtechlead@gmail.com</a>
   </div>
-</section>
-
-<!-- ─── CONTACT ───────────────────────────────── -->
-<section id="contact">
-  <div class="container">
-    <div class="s-label fade-up">Let's talk</div>
-    <h2 class="fade-up">Open to the right opportunity</h2>
-    <p class="s-sub fade-up">Immediate joiner. No notice period. Available for remote roles, contracts, and interesting problems.</p>
-    <div class="contact-wrap fade-up">
-      <div class="contact-info">
-        <h2 style="font-size:1.5rem; margin-bottom:0.75rem;">Get in touch</h2>
-        <p>Whether it's a full-time remote role, a contract, or a conversation — I'm happy to talk. I respond quickly.</p>
-        <div class="clinks">
-          <a href="mailto:asadtechlead@gmail.com" class="clink"><span class="clink-icon">✉</span>asadtechlead@gmail.com</a>
-          <a href="tel:+923084618263" class="clink"><span class="clink-icon">📱</span>+92 308 4618263</a>
-          <a href="https://linkedin.com/in/asad-software-engineer" target="_blank" class="clink"><span class="clink-icon">in</span>linkedin.com/in/asad-software-engineer</a>
-          <a href="https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2" target="_blank" class="clink upwork"><span class="clink-icon">U</span>Upwork — 5★ · 200+ hrs · MERN</a>
-          <a href="#" class="clink"><span class="clink-icon">📍</span>Lahore, Pakistan — Remote ready</a>
-        </div>
-      </div>
-      <div class="contact-form">
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
-          <div class="fg">
-            <label for="name">Your name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
-          </div>
-          <div class="fg" style="margin-top:1rem;">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="jane@company.com" required/>
-          </div>
-          <div class="fg" style="margin-top:1rem;">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about the role or project..."></textarea>
-          </div>
-          <button type="submit" class="form-btn" style="margin-top:1rem;" id="submitBtn">Send message →</button>
-          <div id="formStatus" style="display:none; margin-top:0.75rem; font-size:0.85rem; padding:0.75rem 1rem; border-radius:8px;"></div>
-        </form>
-      </div>
-    </div>
+  <div class="foot-links fade">
+    <a href="https://www.linkedin.com/in/asad-software-engineer">LinkedIn</a>
+    <a href="https://github.com/asadtechlead">GitHub</a>
+    <a href="https://www.youtube.com/@asadtechlead">YouTube</a>
+    <a href="https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2">Upwork</a>
   </div>
-</section>
-
-<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
-<footer>
-  <p>© 2026 <span>Asad Mahmood</span> — Senior Full-Stack Engineer</p>
-  <p>Lahore, Pakistan · Remote-ready</p>
+  <p class="fine">© 2026 Asad Mahmood · Lahore, Pakistan · Made calmly.</p>
 </footer>
 
+</div>
+
 <script>
-/* Theme */
-const html = document.documentElement;
-const saved = localStorage.getItem('theme') || 'dark';
-html.setAttribute('data-theme', saved);
-
-function toggleTheme() {
-  const t = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', t);
-  localStorage.setItem('theme', t);
-}
-
-/* Mobile menu */
-function toggleMenu() {
-  const nav = document.getElementById('mobileNav');
-  const btn = document.getElementById('menuBtn');
-  nav.classList.toggle('open');
-  btn.textContent = nav.classList.contains('open') ? '✕' : '☰';
-}
-function closeMenu() {
-  document.getElementById('mobileNav').classList.remove('open');
-  document.getElementById('menuBtn').textContent = '☰';
-}
-
-/* Scroll animations */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up, .exp-item, .proj-card, .testimonial-card').forEach(el => io.observe(el));
-
-/* Stagger */
-document.querySelectorAll('.exp-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.08}s`; });
-document.querySelectorAll('.proj-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; });
-document.querySelectorAll('.testimonial-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; });
-
-/* Active nav */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-center a');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
-  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${cur}`));
-}, { passive: true });
-
-/* Formspree contact form */
-const form = document.getElementById('contactForm');
-const statusEl = document.getElementById('formStatus');
-const submitBtn = document.getElementById('submitBtn');
-
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (res.ok) {
-        submitBtn.textContent = 'Sent ✓';
-        submitBtn.style.background = '#22C55E';
-        form.reset();
-        statusEl.style.display = 'block';
-        statusEl.style.background = 'rgba(34,197,94,0.1)';
-        statusEl.style.border = '1px solid rgba(34,197,94,0.25)';
-        statusEl.style.color = '#22C55E';
-        statusEl.textContent = "Message sent! I'll get back to you within 24 hours.";
-        setTimeout(() => {
-          submitBtn.textContent = 'Send message →';
-          submitBtn.style.background = '';
-          submitBtn.disabled = false;
-          statusEl.style.display = 'none';
-        }, 5000);
-      } else {
-        throw new Error('Send failed');
-      }
-    } catch {
-      submitBtn.textContent = 'Send message →';
-      submitBtn.disabled = false;
-      statusEl.style.display = 'block';
-      statusEl.style.background = 'rgba(239,68,68,0.1)';
-      statusEl.style.border = '1px solid rgba(239,68,68,0.25)';
-      statusEl.style.color = '#EF4444';
-      statusEl.textContent = 'Something went wrong. Please email me directly at asadtechlead@gmail.com';
-    }
-  });
-}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
