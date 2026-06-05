@@ -158,6 +158,23 @@ form .btn{justify-content:center;cursor:pointer;width:100%}
 footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:center}
 .fine{font-size:.85rem;color:var(--ink3)}
 
+/* hero photo */
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:2.6rem;align-items:center}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.hero-photo{order:-1}}
+.hero-photo{width:190px;height:190px;position:relative;flex-shrink:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:26px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.hero-photo::after{content:"";position:absolute;inset:auto -10px -10px auto;width:74px;height:74px;border-radius:20px;
+  background:var(--accent-soft);border:1px solid var(--line);z-index:-1}
+/* product shots on cards */
+.proj-shot{width:100%;border-radius:10px;border:1px solid var(--line);margin-bottom:1rem;display:block}
+/* video */
+.video-card{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;box-shadow:var(--shadow);max-width:720px;background:#000}
+.video-card img{width:100%;display:block;opacity:.94}
+.video-card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.video-card .play span{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-size:1.5rem;box-shadow:var(--shadow);transition:transform .2s ease}
+.video-card:hover .play span{transform:scale(1.08)}
+.video-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+
 .fade{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .fade.in{opacity:1;transform:none}
 </style>
@@ -184,6 +201,8 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
 <div class="wrap" id="top">
 
 <header>
+  <div class="hero-grid">
+  <div>
   <p class="kicker fade">Software Architect &amp; Team Lead · Senior Full-Stack Engineer · 10+ Years</p>
   <h1 class="fade">I build things that actually scale.</h1>
   <p class="lede fade">From <strong>WebRTC at the SDP level</strong> to full-stack APIs, <strong>Chrome extensions</strong>, <strong>AI features</strong>, and AWS infrastructure — I own features end-to-end and lead teams that ship. Security first (<strong>OWASP Top Ten</strong>), <strong>Claude Certified</strong>, and building my own products on the side.</p>
@@ -191,6 +210,11 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
     <a class="btn primary" href="#contact">Get in touch →</a>
     <a class="btn" href="Asad_Mahmood_Resume.pdf" download>⬇ Download CV</a>
     <a class="btn" href="https://www.linkedin.com/in/asad-software-engineer">LinkedIn</a>
+  </div>
+  </div>
+  <div class="hero-photo fade">
+    <img src="assets/avatar.png" alt="Asad Mahmood — software architect and team lead, Lahore" width="190" height="190"/>
+  </div>
   </div>
   <div class="stats fade">
     <div class="stat"><b>10+</b><span>Years shipped</span></div>
@@ -317,6 +341,7 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
         <img src="assets/inbill-icon.png" alt="InBill app icon" loading="lazy"/>
         <div><span class="ptag">My product · AI invoicing</span><h3>InBill</h3></div>
       </div>
+      <img class="proj-shot" src="assets/inbill-og.png" alt="InBill — free AI invoice generator" loading="lazy"/>
       <p>Free invoice software and AI invoice generator for freelancers — describe the job in plain language and InBill drafts, clarifies, and sends the invoice. Built, designed, and shipped solo.</p>
       <div class="chips"><span class="chip">TypeScript</span><span class="chip">AI</span><span class="chip">Android</span><span class="chip">Supabase</span></div>
       <div class="links"><a href="https://inbill.net">inbill.net →</a><a href="https://play.google.com/store/apps/details?id=net.inbill">Google Play →</a></div>
@@ -327,6 +352,7 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
         <img src="assets/kidspin-icon.png" alt="KidSpin app icon" loading="lazy"/>
         <div><span class="ptag">My product · Kids learning</span><h3>KidSpin</h3></div>
       </div>
+      <img class="proj-shot" src="assets/kidspin-og.png" alt="KidSpin — bilingual English + Urdu preschool learning app" loading="lazy"/>
       <p>Bilingual (English + Urdu) preschool learning app — ABC, 123, alif bay pay, phonics, and six mini-games for ages 2–7. Free, ad-light, no login. The only Urdu-native preschool app of its kind.</p>
       <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Education</span><span class="chip">Play Store</span></div>
       <div class="links"><a href="https://kidspin.zaions.com">kidspin.zaions.com →</a><a href="https://play.google.com/store/apps/details?id=com.asadtechlead.kidspin">Google Play →</a></div>
@@ -404,8 +430,12 @@ footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:
 <section id="youtube">
   <p class="eyebrow fade">Content</p>
   <h2 class="fade">I also make videos</h2>
-  <p class="sub fade" style="margin-bottom:1rem">Practical videos on AI tools, web development, and security for developers — new channel, more coming.</p>
-  <a class="btn fade" href="https://www.youtube.com/@asadtechlead">▶ youtube.com/@asadtechlead</a>
+  <p class="sub fade">My 2-minute intro — plus practical videos on AI tools, web development, and security for developers.</p>
+  <div class="video-card fade" onclick="playIntro(this)" role="button" aria-label="Play intro video" tabindex="0" onkeydown="if(event.key==='Enter')playIntro(this)">
+    <img src="assets/yt-thumb.jpg" alt="Watch: Asad Mahmood — From Front-End Lead to Engineering Strategy" loading="lazy"/>
+    <div class="play"><span>▶</span></div>
+  </div>
+  <p style="margin-top:1rem;font-size:.92rem;color:var(--ink3)" class="fade">More on <a href="https://www.youtube.com/@asadtechlead">youtube.com/@asadtechlead</a></p>
 </section>
 
 <section id="contact">
@@ -448,6 +478,7 @@ const sysDark=matchMedia('(prefers-color-scheme: dark)').matches;
 function setTheme(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'☀️':'🌙';localStorage.setItem('theme',t)}
 setTheme(saved||(sysDark?'dark':'light'));
 btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+function playIntro(el){el.outerHTML='<div class="video-card"><iframe src="https://www.youtube-nocookie.com/embed/9WojTphhxqY?autoplay=1" title="Asad Mahmood intro video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'}
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
