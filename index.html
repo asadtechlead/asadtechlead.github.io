@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Asad Mahmood — Software Engineer & Team Lead · Software Architect</title>
-<meta name="description" content="Asad Mahmood — software engineer and team lead with 10+ years building secure, scalable web and mobile apps. Software architect at Croyten (Zenbee). Builder of InBill and KidSpin. Lahore, Pakistan."/>
+<title>Asad Mahmood — Software Architect & Team Lead | Senior Full-Stack Engineer</title>
+<meta name="description" content="Asad Mahmood — software architect, team lead and senior full-stack engineer with 10+ years. WebRTC at the SDP level, Angular, .NET, Node.js, Chrome extensions, AWS, AI. Builder of InBill and KidSpin. Lahore — remote ready, immediate joiner."/>
+<meta name="keywords" content="Asad Mahmood, software architect, team lead, senior full-stack engineer, software engineer, Angular, .NET, React, Node.js, TypeScript, WebRTC, Chrome extensions, AWS, MERN, cyber security, OWASP, AI developer, Claude Code, InBill, KidSpin, remote, Lahore, Pakistan, lead engineer, web development"/>
 <link rel="canonical" href="https://asadtechlead.github.io/"/>
 <meta property="og:type" content="profile"/>
-<meta property="og:title" content="Asad Mahmood — Software Engineer & Team Lead"/>
-<meta property="og:description" content="10+ years building secure, scalable software. Software architect at Croyten. Builder of InBill (AI invoicing) and KidSpin."/>
+<meta property="og:title" content="Asad Mahmood — Software Architect & Team Lead"/>
+<meta property="og:description" content="10+ years shipping at scale: WebRTC SDKs, Chrome extensions, SaaS frontends, AI features. Builder of InBill (AI invoicing) and KidSpin."/>
 <meta property="og:url" content="https://asadtechlead.github.io/"/>
+<meta property="og:image" content="https://inbill.net/apple-touch-icon.png"/>
 <meta name="twitter:card" content="summary"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E7569'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='600' fill='%23FAF7F2' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"/>
 <meta name="theme-color" content="#FAF7F2"/>
@@ -21,23 +23,24 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Asad Mahmood",
-  "jobTitle": "Software Engineer & Team Lead · Software Architect",
-  "worksFor": { "@type": "Organization", "name": "Croyten" },
+  "jobTitle": "Software Architect & Team Lead",
+  "worksFor": { "@type": "Organization", "name": "Croyten (Foviro)" },
   "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" },
   "email": "mailto:asadtechlead@gmail.com",
+  "telephone": "+923084618263",
   "url": "https://asadtechlead.github.io/",
   "sameAs": [
     "https://www.linkedin.com/in/asad-software-engineer",
     "https://github.com/asadtechlead",
     "https://www.youtube.com/@asadtechlead",
+    "https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2",
     "https://inbill.net",
     "https://kidspin.zaions.com"
   ],
-  "knowsAbout": ["Software architecture", "Web development", "Angular", ".NET", "TypeScript", "Cyber security", "AI development"]
+  "knowsAbout": ["Software architecture","Team leadership","Angular",".NET","React","Node.js","TypeScript","WebRTC","Chrome extensions","AWS","Cyber security","AI development"]
 }
 </script>
 <style>
-/* ── Calm editorial: warm paper, slate ink, one quiet teal accent ── */
 :root{
   --paper:#FAF7F2; --paper2:#F3EEE6; --card:#FFFFFF;
   --ink:#22272F; --ink2:#5A6170; --ink3:#8A8F9B;
@@ -48,123 +51,115 @@
   --sans:'Figtree',system-ui,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --paper:#15181E; --paper2:#1B1F27; --card:#1E232C;
-    --ink:#EDEAE3; --ink2:#A7ACB8; --ink3:#767C89;
-    --accent:#5CC0B2; --accent-soft:#1E3330;
-    --line:#2A303B; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35);
-  }
+[data-theme="dark"]{
+  --paper:#15181E; --paper2:#1B1F27; --card:#1E232C;
+  --ink:#EDEAE3; --ink2:#A7ACB8; --ink3:#767C89;
+  --accent:#5CC0B2; --accent-soft:#1E3330;
+  --line:#2A303B; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-}
-body{
-  background:var(--paper); color:var(--ink);
-  font-family:var(--sans); font-size:1.0625rem; line-height:1.7;
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-}
-/* soft paper grain */
-body::before{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.35;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.025'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.025'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 ::selection{background:var(--accent);color:var(--paper)}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.4rem;position:relative;z-index:1}
 
-.wrap{max-width:880px;margin:0 auto;padding:0 1.4rem;position:relative;z-index:1}
-
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:880px;margin:0 auto;padding:.85rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+nav{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:960px;margin:0 auto;padding:.8rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--ink)}
 .brand:hover{text-decoration:none}
-.nav-links{display:flex;gap:1.3rem;font-size:.92rem;font-weight:500}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.nav-links{display:flex;gap:1.2rem;font-size:.92rem;font-weight:500}
 .nav-links a{color:var(--ink2)}
 .nav-links a:hover{color:var(--accent);text-decoration:none}
-@media(max-width:640px){.nav-links{display:none}}
+.open-badge{font-size:.78rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);border-radius:999px;padding:.25rem .7rem;white-space:nowrap}
+.theme-btn{border:1px solid var(--line);background:var(--card);border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:1rem;line-height:1}
+@media(max-width:760px){.nav-links{display:none}}
 
-/* hero */
-header{padding:5.5rem 0 4rem}
+header{padding:5rem 0 3.5rem}
 .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.12;letter-spacing:-.01em;max-width:21ch}
-.lede{margin-top:1.4rem;font-size:clamp(1.08rem,2.4vw,1.25rem);color:var(--ink2);max-width:56ch}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,6vw,3.5rem);line-height:1.12;letter-spacing:-.01em;max-width:22ch}
+.lede{margin-top:1.4rem;font-size:clamp(1.05rem,2.3vw,1.22rem);color:var(--ink2);max-width:60ch}
 .lede strong{color:var(--ink);font-weight:600}
-.meta-row{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.92rem;color:var(--ink3)}
-.meta-row span{display:flex;align-items:center;gap:.45rem}
-.cta-row{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.25rem;border-radius:999px;
-  font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--ink);background:var(--card);
-  box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease}
+.cta-row{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.25rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--ink);background:var(--card);box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease}
 .btn:hover{transform:translateY(-2px);text-decoration:none;border-color:var(--accent)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-@media (prefers-color-scheme: dark){.btn.primary{color:#10211E}}
+[data-theme="dark"] .btn.primary{color:#10211E}
+.stats{margin-top:2.8rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.3rem;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--serif);font-weight:600;font-size:1.8rem;color:var(--accent)}
+.stat span{font-size:.85rem;color:var(--ink3)}
+.facts{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.fact{font-family:var(--mono);font-size:.78rem;color:var(--ink2);border:1px dashed var(--line);border-radius:999px;padding:.3rem .8rem}
 
-/* sections */
-section{padding:3.4rem 0;border-top:1px solid var(--line)}
+section{padding:3.2rem 0;border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);margin-bottom:.5rem}
-.sub{color:var(--ink2);max-width:60ch;margin-bottom:2rem}
+.sub{color:var(--ink2);max-width:62ch;margin-bottom:2rem}
 
-/* currently strip */
-.current{display:flex;flex-wrap:wrap;gap:1rem;background:var(--accent-soft);border:1px solid var(--line);
-  border-radius:var(--r);padding:1.3rem 1.5rem;align-items:baseline}
-.current b{font-weight:700}
-.current .where{font-family:var(--mono);font-size:.82rem;color:var(--accent)}
+.current{display:flex;flex-wrap:wrap;gap:1rem;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.5rem;align-items:baseline}
+.current .where{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
 
-/* cards */
 .grid{display:grid;gap:1.1rem}
-.grid.three{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.grid.two{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shadow);
-  transition:transform .18s ease}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;box-shadow:var(--shadow);transition:transform .18s ease}
 .card:hover{transform:translateY(-3px)}
-.card h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;margin-bottom:.5rem}
-.card p{font-size:.97rem;color:var(--ink2)}
-.card .links{margin-top:1rem;display:flex;gap:1.1rem;font-size:.9rem;font-weight:600}
-.tag{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:.2rem .55rem;margin-bottom:.9rem}
+.card h3{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.55rem}
+.card .ic{font-size:1.25rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.chip{font-family:var(--mono);font-size:.74rem;padding:.28rem .65rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink2)}
 
-/* experience */
-.xp{display:grid;gap:0}
-.xp-item{display:grid;grid-template-columns:150px 1fr;gap:1.4rem;padding:1.35rem 0;border-bottom:1px dashed var(--line)}
+.xp-item{padding:1.5rem 0;border-bottom:1px dashed var(--line)}
 .xp-item:last-child{border-bottom:none}
-.xp-when{font-family:var(--mono);font-size:.82rem;color:var(--ink3);padding-top:.25rem}
-.xp-item h3{font-size:1.05rem;font-weight:700}
+.xp-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;align-items:baseline}
+.xp-item h3{font-size:1.1rem;font-weight:700}
 .xp-item .role{color:var(--accent);font-weight:600;font-size:.95rem}
-.xp-item p{font-size:.95rem;color:var(--ink2);margin-top:.3rem}
-@media(max-width:560px){.xp-item{grid-template-columns:1fr;gap:.2rem}}
+.xp-when{font-family:var(--mono);font-size:.8rem;color:var(--ink3)}
+.xp-org{font-size:.9rem;color:var(--ink3);margin-top:.15rem}
+.xp-item ul{margin:.8rem 0 0 1.1rem;display:grid;gap:.35rem}
+.xp-item li{font-size:.95rem;color:var(--ink2)}
+.xp-item li b{color:var(--ink)}
 
-/* quote */
-blockquote{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
-  border-radius:var(--r);padding:1.8rem 2rem;box-shadow:var(--shadow)}
-blockquote p{font-family:var(--serif);font-size:1.15rem;line-height:1.6}
-blockquote footer{margin-top:1rem;font-size:.9rem;color:var(--ink2)}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;box-shadow:var(--shadow);transition:transform .18s ease;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-3px)}
+.proj-head{display:flex;align-items:center;gap:.85rem;margin-bottom:.7rem}
+.proj-head img{width:46px;height:46px;border-radius:11px;border:1px solid var(--line)}
+.proj-num{font-family:var(--mono);font-size:.72rem;color:var(--ink3)}
+.proj h3{font-family:var(--serif);font-weight:600;font-size:1.18rem}
+.proj .ptag{font-family:var(--mono);font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.proj p{font-size:.94rem;color:var(--ink2);flex:1}
+.proj .links{margin-top:1rem;display:flex;gap:1.1rem;font-size:.9rem;font-weight:600}
+.upwork-stats{display:flex;gap:1.6rem;margin-top:1rem}
+.upwork-stats b{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--accent)}
+.upwork-stats span{font-size:.78rem;color:var(--ink3)}
+
+blockquote{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);padding:1.5rem 1.8rem;box-shadow:var(--shadow)}
+blockquote p{font-size:.98rem;line-height:1.65;color:var(--ink2)}
+blockquote footer{margin-top:.9rem;font-size:.88rem;color:var(--ink3)}
 blockquote footer b{color:var(--ink)}
 
-/* stack */
-.stack{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{font-family:var(--mono);font-size:.82rem;padding:.4rem .8rem;border:1px solid var(--line);
-  border-radius:999px;background:var(--card);color:var(--ink2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:2.2rem;box-shadow:var(--shadow)}
+@media(max-width:720px){.contact-grid{grid-template-columns:1fr}}
+.clinks{display:grid;gap:.6rem;margin-top:1.2rem}
+.clink{display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;border:1px solid var(--line);border-radius:10px;font-size:.9rem;color:var(--ink2);transition:border-color .15s ease}
+.clink:hover{border-color:var(--accent);text-decoration:none;color:var(--ink)}
+form{display:grid;gap:.8rem}
+input,textarea{font-family:var(--sans);font-size:.95rem;padding:.75rem 1rem;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+textarea{min-height:120px;resize:vertical}
+form .btn{justify-content:center;cursor:pointer;width:100%}
 
-/* footer */
-footer.site{padding:3.5rem 0 4.5rem;border-top:1px solid var(--line);text-align:center}
-footer.site h2{margin-bottom:1rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;margin:1.6rem 0;font-weight:600}
-.fine{font-size:.85rem;color:var(--ink3);margin-top:2rem}
+footer.site{padding:2.8rem 0 3.5rem;border-top:1px solid var(--line);text-align:center}
+.fine{font-size:.85rem;color:var(--ink3)}
 
-/* reveal */
 .fade{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .fade.in{opacity:1;transform:none}
-header .fade:nth-child(1){transition-delay:.05s}
-header .fade:nth-child(2){transition-delay:.12s}
-header .fade:nth-child(3){transition-delay:.2s}
-header .fade:nth-child(4){transition-delay:.28s}
-header .fade:nth-child(5){transition-delay:.36s}
 </style>
 </head>
 <body>
@@ -172,11 +167,16 @@ header .fade:nth-child(5){transition-delay:.36s}
 <nav>
   <div class="nav-in">
     <a class="brand" href="#top">Asad Mahmood</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#products">Products</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <span class="open-badge">● Open to work</span>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
     </div>
   </div>
 </nav>
@@ -184,150 +184,280 @@ header .fade:nth-child(5){transition-delay:.36s}
 <div class="wrap" id="top">
 
 <header>
-  <p class="kicker fade">Software Engineer · Team Lead · Software Architect</p>
-  <h1 class="fade">Calm, secure software — built and shipped with care.</h1>
-  <p class="lede fade">I'm Asad — a software engineer with <strong>10+ years</strong> of experience. I lead a team of 7 engineers as a <strong>software architect at Croyten</strong>, and I build my own products end&nbsp;to&nbsp;end. Security first, AI&nbsp;everywhere it helps.</p>
-  <div class="meta-row fade">
-    <span>📍 Lahore, Pakistan</span>
-    <span>🟢 Open to lead &amp; architect roles</span>
-    <span>🔐 OWASP-minded</span>
-    <span>🤖 Claude Certified</span>
-  </div>
+  <p class="kicker fade">Software Architect &amp; Team Lead · Senior Full-Stack Engineer · 10+ Years</p>
+  <h1 class="fade">I build things that actually scale.</h1>
+  <p class="lede fade">From <strong>WebRTC at the SDP level</strong> to full-stack APIs, <strong>Chrome extensions</strong>, <strong>AI features</strong>, and AWS infrastructure — I own features end-to-end and lead teams that ship. Security first (<strong>OWASP Top Ten</strong>), <strong>Claude Certified</strong>, and building my own products on the side.</p>
   <div class="cta-row fade">
-    <a class="btn primary" href="mailto:asadtechlead@gmail.com">Email me</a>
+    <a class="btn primary" href="#contact">Get in touch →</a>
+    <a class="btn" href="Asad_Mahmood_Resume.pdf" download>⬇ Download CV</a>
     <a class="btn" href="https://www.linkedin.com/in/asad-software-engineer">LinkedIn</a>
-    <a class="btn" href="Asad_Mahmood_Resume.pdf" download>Resume (PDF)</a>
+  </div>
+  <div class="stats fade">
+    <div class="stat"><b>10+</b><span>Years shipped</span></div>
+    <div class="stat"><b>50%</b><span>AWS cost cut</span></div>
+    <div class="stat"><b>65%</b><span>Bug density cut</span></div>
+    <div class="stat"><b>5★</b><span>Upwork rating</span></div>
+  </div>
+  <div class="facts fade">
+    <span class="fact">Immediate joiner · Lahore · Remote · Any timezone</span>
+    <span class="fact">5.0 ★ Upwork · 200+ hrs · MERN</span>
+    <span class="fact">3 Chrome extensions in production</span>
+    <span class="fact">Team of 7 engineers led</span>
+    <span class="fact">30% faster code reviews</span>
+    <span class="fact">128% product demand growth · Sibme</span>
   </div>
 </header>
 
-<section id="now" class="fade" style="border-top:none;padding-top:0">
-  <div class="current">
+<section id="now" style="border-top:none;padding-top:0">
+  <div class="current fade">
     <span class="where">NOW</span>
-    <span><b>Croyten · Zenbee</b> — AI sales platform (lead generation, CRM workflows, email outreach). I lead architecture, AI features, and delivery with a team of 7 engineers.</span>
+    <span><b>Croyten (Foviro) · Zenbee</b> — B2B sales intelligence SaaS. Software architect &amp; team lead for 7 engineers across frontend, backend, and AI — architecture, AI features, client collaboration, and delivery.</span>
   </div>
 </section>
 
-<section id="work">
-  <h2 class="fade">What I do</h2>
-  <p class="sub fade">Three things, done consistently for a decade.</p>
+<section id="skills">
+  <p class="eyebrow fade">Expertise</p>
+  <h2 class="fade">What I bring to your team</h2>
+  <p class="sub fade">A decade of building across the full stack — from pixel-perfect UIs to low-latency real-time systems, AI features, and cloud infrastructure.</p>
   <div class="grid three">
-    <div class="card fade">
-      <span class="tag">Architecture</span>
-      <h3>Design &amp; lead</h3>
-      <p>System architecture, technical decisions, and leading engineers across frontend, backend, and AI — from requirement to release.</p>
-    </div>
-    <div class="card fade">
-      <span class="tag">Security</span>
-      <h3>Build it safe</h3>
-      <p>Every design starts with the OWASP Top Ten in mind — secure SDKs, safe auth flows, and architectures that hold up under review.</p>
-    </div>
-    <div class="card fade">
-      <span class="tag">AI delivery</span>
-      <h3>Ship fast with AI</h3>
-      <p>Claude Code, MCP servers, and AI APIs in my daily workflow — a full pricing-system redesign went from idea to client-ready in hours.</p>
-    </div>
-  </div>
-</section>
-
-<section id="products">
-  <h2 class="fade">Products I've built</h2>
-  <p class="sub fade">Designed, coded, and shipped end to end — on my own time.</p>
-  <div class="grid two">
-    <div class="card fade">
-      <span class="tag">AI · Invoicing</span>
-      <h3>InBill</h3>
-      <p>Free invoice software and AI invoice generator for freelancers — you talk, it makes the invoice. No forms, no friction.</p>
-      <div class="links">
-        <a href="https://inbill.net">inbill.net</a>
-        <a href="https://play.google.com/store/apps/details?id=net.inbill">Google Play</a>
-      </div>
-    </div>
-    <div class="card fade">
-      <span class="tag">Kids · Learning</span>
-      <h3>KidSpin</h3>
-      <p>Bilingual (English + Urdu) preschool learning app — ABC, 123, alif bay pay, phonics and mini-games for ages 2–7. Free, ad-light, no login.</p>
-      <div class="links">
-        <a href="https://kidspin.zaions.com">kidspin.zaions.com</a>
-        <a href="https://play.google.com/store/apps/details?id=com.asadtechlead.kidspin">Google Play</a>
-      </div>
-    </div>
+    <div class="card fade"><h3><span class="ic">⚡</span>Frontend Engineering</h3>
+      <div class="chips"><span class="chip">Angular 4–17</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Next.js</span><span class="chip">RxJS</span><span class="chip">Tailwind CSS</span><span class="chip">PrimeNG</span><span class="chip">HTML5</span></div></div>
+    <div class="card fade"><h3><span class="ic">🔧</span>Backend &amp; APIs</h3>
+      <div class="chips"><span class="chip">Node.js</span><span class="chip">.NET</span><span class="chip">Express</span><span class="chip">PHP/Laravel</span><span class="chip">REST APIs</span><span class="chip">WebSockets</span><span class="chip">OAuth</span><span class="chip">Prisma</span></div></div>
+    <div class="card fade"><h3><span class="ic">🧩</span>Chrome Extensions</h3>
+      <div class="chips"><span class="chip">Manifest V3</span><span class="chip">Content Scripts</span><span class="chip">Background Workers</span><span class="chip">DOM Automation</span><span class="chip">LinkedIn APIs</span><span class="chip">Lead Generation</span></div></div>
+    <div class="card fade"><h3><span class="ic">📡</span>Real-Time Systems</h3>
+      <div class="chips"><span class="chip">WebRTC (SDP-level)</span><span class="chip">WebSockets</span><span class="chip">Live Streaming</span><span class="chip">JS SDK Dev</span><span class="chip">Screen Sharing</span></div></div>
+    <div class="card fade"><h3><span class="ic">🤖</span>AI Engineering</h3>
+      <div class="chips"><span class="chip">Claude Code</span><span class="chip">MCP Servers</span><span class="chip">AI APIs</span><span class="chip">OpenAI Integration</span><span class="chip">AI Prototyping</span><span class="chip">Claude Certified</span></div></div>
+    <div class="card fade"><h3><span class="ic">🔐</span>Security</h3>
+      <div class="chips"><span class="chip">OWASP Top Ten</span><span class="chip">Secure SDK Design</span><span class="chip">Auth Flows</span><span class="chip">Code Review</span><span class="chip">Frontend Vulnerabilities</span></div></div>
+    <div class="card fade"><h3><span class="ic">☁️</span>Cloud &amp; DevOps</h3>
+      <div class="chips"><span class="chip">AWS EC2</span><span class="chip">AWS Cost Optimization</span><span class="chip">Docker</span><span class="chip">Azure DevOps</span><span class="chip">CI/CD</span><span class="chip">Linux</span><span class="chip">Git</span></div></div>
+    <div class="card fade"><h3><span class="ic">🗄️</span>Data &amp; Architecture</h3>
+      <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">System Design</span><span class="chip">Analytics Dashboards</span></div></div>
+    <div class="card fade"><h3><span class="ic">📱</span>Mobile</h3>
+      <div class="chips"><span class="chip">Flutter / Dart</span><span class="chip">Kotlin</span><span class="chip">Ionic</span><span class="chip">Capacitor</span><span class="chip">Play Store Releases</span></div></div>
   </div>
 </section>
 
 <section id="experience">
-  <h2 class="fade">Experience</h2>
-  <p class="sub fade">A steady path from front-end developer to architect.</p>
-  <div class="xp">
-    <div class="xp-item fade">
-      <div class="xp-when">2024 — now</div>
-      <div>
-        <h3>Croyten <span class="role">· Software Architect &amp; Team Lead</span></h3>
-        <p>Leading a team of 7 on Zenbee, an AI sales platform — architecture, product decisions, AI features, and end-to-end delivery. Stack: .NET, Angular, TypeScript, RxJS, Docker, Azure DevOps.</p>
+  <p class="eyebrow fade">Career</p>
+  <h2 class="fade">10 years. Real impact. Real numbers.</h2>
+  <p class="sub fade">I don't just write code — I lead teams, cut costs, reduce bugs, and drive product growth.</p>
+
+  <div class="xp-item fade">
+    <div class="xp-head"><h3>Software Architect &amp; Team Lead <span class="role">· joined as Lead Frontend Engineer</span></h3><span class="xp-when">Mar 2024 — Now</span></div>
+    <div class="xp-org">Croyten (Foviro) · Lahore — Zenbee, B2B Sales Intelligence SaaS</div>
+    <ul>
+      <li>Re-architected the entire frontend from legacy HTML/Bootstrap to <b>Angular 17 + TypeScript</b>, wiping out a persistent backlog of stability issues</li>
+      <li>Built Zenbee's <b>Chrome extension</b> — surfaces sales intelligence directly inside the browser workflow</li>
+      <li>Integrated <b>AI across product workflows</b> with the AI team — intelligent features, secure frontends, user-centric design</li>
+      <li>Audited AWS infrastructure — right-sized resources and eliminated waste, <b>cutting cloud costs by 50%</b></li>
+      <li>Established coding standards and PR practices that <b>cut review cycle time by 30%</b></li>
+      <li>Lead a team of <b>7 engineers</b> across frontend, backend, and AI — sprint planning, architecture, and mentorship</li>
+    </ul>
+    <div class="chips"><span class="chip">Angular 17</span><span class="chip">.NET</span><span class="chip">TypeScript</span><span class="chip">RxJS</span><span class="chip">Chrome Extension</span><span class="chip">AWS</span><span class="chip">WebSockets</span><span class="chip">Azure DevOps</span><span class="chip">Docker</span></div>
+  </div>
+
+  <div class="xp-item fade">
+    <div class="xp-head"><h3>Lead Frontend Developer — JS SDK Team</h3><span class="xp-when">Jul 2021 — Dec 2023</span></div>
+    <div class="xp-org">Norgic / VdoTok · Lahore</div>
+    <ul>
+      <li>Led the team building two production SDKs — a <b>Messaging SDK</b> (open source) and an <b>Audio/Video Calling SDK</b> — used by external developer communities</li>
+      <li>Implemented <b>WebRTC at the SDP level</b>, reducing live streaming latency from ~1 second to milliseconds</li>
+      <li>Built a <b>screen-sharing JavaScript SDK for mobile browsers</b> — a capability not natively supported</li>
+      <li>Led 6-month R&amp;D effort that <b>cut SDK bug density by 65%</b></li>
+      <li>Designed secure architectures protected against the <b>OWASP Top Ten</b></li>
+    </ul>
+    <div class="chips"><span class="chip">TypeScript</span><span class="chip">ES6+</span><span class="chip">WebRTC</span><span class="chip">WebSockets</span><span class="chip">Node.js</span><span class="chip">JS SDKs</span></div>
+  </div>
+
+  <div class="xp-item fade">
+    <div class="xp-head"><h3>Senior Full-Stack Engineer</h3><span class="xp-when">Jun 2018 — Aug 2021</span></div>
+    <div class="xp-org">3S Solutions · Sibme (USA)</div>
+    <ul>
+      <li>Core team member for three years on Sibme, a US-based edtech SaaS — full ownership from architecture to DevOps</li>
+      <li>Led a team of 4 engineers — <b>product demand grew 128%</b> during tenure</li>
+      <li>Built analytics dashboards and reporting tools for thousands of daily users</li>
+      <li><b>Cut analytics report load time by 25%</b> via Redis caching on complex SQL queries</li>
+    </ul>
+    <div class="chips"><span class="chip">Angular</span><span class="chip">Node.js</span><span class="chip">PHP/Laravel</span><span class="chip">MySQL</span><span class="chip">Redis</span><span class="chip">AWS</span></div>
+  </div>
+
+  <div class="xp-item fade">
+    <div class="xp-head"><h3>Senior Node.js &amp; Angular Developer</h3><span class="xp-when">Dec 2017 — Jun 2018</span></div>
+    <div class="xp-org">NetRoots Technologies · Lahore</div>
+    <ul>
+      <li>Led hybrid mobile app development — achieved <b>40% improvement in customer satisfaction</b></li>
+      <li>Delivered the <b>Eye Doctor App</b> — data management, report sharing, and analytics for ophthalmologists</li>
+    </ul>
+    <div class="chips"><span class="chip">Node.js</span><span class="chip">Angular</span><span class="chip">Ionic</span><span class="chip">REST APIs</span></div>
+  </div>
+
+  <div class="xp-item fade">
+    <div class="xp-head"><h3>Full-Stack &amp; PHP Developer — the early years</h3><span class="xp-when">2015 — 2017</span></div>
+    <div class="xp-org">Bluehorntech · Shayan Solutions · Lahore</div>
+    <ul>
+      <li>Started in frontend, grew into full-stack — first large project served thousands of customers (analytics &amp; reporting)</li>
+      <li>Built hybrid mobile applications with the Ionic Framework</li>
+    </ul>
+    <div class="chips"><span class="chip">PHP</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">Ionic</span></div>
+  </div>
+</section>
+
+<section id="projects">
+  <p class="eyebrow fade">Selected Work</p>
+  <h2 class="fade">Things I've built</h2>
+  <p class="sub fade">Production projects — my own apps, SaaS platforms, Chrome extensions, real-time SDKs, and more.</p>
+
+  <div class="grid two">
+    <div class="proj fade">
+      <div class="proj-head">
+        <img src="https://inbill.net/apple-touch-icon.png" alt="InBill app icon" loading="lazy"/>
+        <div><span class="ptag">My product · AI invoicing</span><h3>InBill</h3></div>
       </div>
+      <p>Free invoice software and AI invoice generator for freelancers — describe the job in plain language and InBill drafts, clarifies, and sends the invoice. Built, designed, and shipped solo.</p>
+      <div class="chips"><span class="chip">TypeScript</span><span class="chip">AI</span><span class="chip">Android</span><span class="chip">Supabase</span></div>
+      <div class="links"><a href="https://inbill.net">inbill.net →</a><a href="https://play.google.com/store/apps/details?id=net.inbill">Google Play →</a></div>
     </div>
-    <div class="xp-item fade">
-      <div class="xp-when">2021 — 2025</div>
-      <div>
-        <h3>VdoTok <span class="role">· Frontend Team Lead</span></h3>
-        <p>Led development of JavaScript SDKs used by external developers — messaging and audio/video calling — designed secure, OWASP-hardened architectures.</p>
+
+    <div class="proj fade">
+      <div class="proj-head">
+        <img src="https://kidspin.zaions.com/assets/images/apple-touch-icon.png" alt="KidSpin app icon" loading="lazy"/>
+        <div><span class="ptag">My product · Kids learning</span><h3>KidSpin</h3></div>
       </div>
+      <p>Bilingual (English + Urdu) preschool learning app — ABC, 123, alif bay pay, phonics, and six mini-games for ages 2–7. Free, ad-light, no login. The only Urdu-native preschool app of its kind.</p>
+      <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Education</span><span class="chip">Play Store</span></div>
+      <div class="links"><a href="https://kidspin.zaions.com">kidspin.zaions.com →</a><a href="https://play.google.com/store/apps/details?id=com.asadtechlead.kidspin">Google Play →</a></div>
     </div>
-    <div class="xp-item fade">
-      <div class="xp-when">2018 — 2021</div>
-      <div>
-        <h3>3S Solutions <span class="role">· Lead Engineer</span></h3>
-        <p>Lead engineer on Sibme, a video-coaching platform serving thousands of users — security, architecture, DevOps, and team leadership.</p>
-      </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">SaaS + Chrome Extension · 01</span><h3>Zenbee — B2B Sales Intelligence</h3></div></div>
+      <p>Full frontend re-architecture + Chrome extension. Built analytics dashboards, lead management, and a browser extension that surfaces sales insights directly in the workflow.</p>
+      <div class="chips"><span class="chip">Angular 17</span><span class="chip">TypeScript</span><span class="chip">Chrome Ext</span><span class="chip">WebSockets</span><span class="chip">AWS</span></div>
     </div>
-    <div class="xp-item fade">
-      <div class="xp-when">2015 — 2018</div>
-      <div>
-        <h3>Earlier years <span class="role">· Full-Stack &amp; Mobile</span></h3>
-        <p>PHP → full-stack → hybrid mobile apps (Ionic) at Bluehorntech, Shayan Solutions, and NetRoots — where the curiosity started.</p>
-      </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">Freelance · Verified</span><h3>Upwork — Perfect Rating</h3></div></div>
+      <p>Two completed MERN stack contracts with perfect 5-star ratings across 200+ billed hours, working directly with international clients.</p>
+      <div class="upwork-stats"><div><b>5.0</b><span>Rating</span></div><div><b>200+</b><span>Hours</span></div><div><b>2</b><span>Jobs</span></div></div>
+      <div class="links"><a href="https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2">Upwork profile →</a></div>
+    </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">Chrome Extension · 02</span><h3>EZ Brands — LinkedIn Lead Gen</h3></div></div>
+      <p>Automated LinkedIn lead discovery extension. Scrapes, qualifies, and surfaces prospects matching target criteria — fully embedded in the LinkedIn UI.</p>
+      <div class="chips"><span class="chip">Chrome Extension</span><span class="chip">JavaScript</span><span class="chip">DOM</span><span class="chip">Lead Gen</span></div>
+    </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">Chrome Extension · 03</span><h3>EZ Brands — Facebook Outreach</h3></div></div>
+      <p>Lead generation and outreach automation on Facebook — finding leads, sending friend requests, and managing contact workflows, all from within the FB interface.</p>
+      <div class="chips"><span class="chip">Chrome Extension</span><span class="chip">JavaScript</span><span class="chip">Automation</span><span class="chip">DOM</span></div>
+    </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">Real-Time SDK · 04</span><h3>VdoTok Audio/Video Calling SDK</h3></div></div>
+      <p>Production JS Audio/Video SDK built at the WebRTC SDP level. Reduced live latency from ~1s to milliseconds. Shipped to an external developer community with a free quota.</p>
+      <div class="chips"><span class="chip">WebRTC</span><span class="chip">TypeScript</span><span class="chip">SDP</span><span class="chip">SDK</span></div>
+    </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">Mobile SDK · 05</span><h3>Mobile Screen-Sharing SDK</h3></div></div>
+      <p>JS SDK enabling screen sharing on mobile web browsers — a capability the browser doesn't natively support. Solved at the WebRTC layer with custom JS techniques.</p>
+      <div class="chips"><span class="chip">JavaScript</span><span class="chip">WebRTC</span><span class="chip">Mobile Web</span><span class="chip">SDK</span></div>
+    </div>
+
+    <div class="proj fade">
+      <div class="proj-head"><div><span class="ptag">EdTech SaaS · 06</span><h3>Sibme — US EdTech Platform</h3></div></div>
+      <p>Core team for 3 years on a US edtech SaaS. Full-stack ownership, analytics dashboards, DevOps. Demand grew 128%. Report load time cut 25% with Redis caching.</p>
+      <div class="chips"><span class="chip">Node.js</span><span class="chip">Angular</span><span class="chip">MySQL</span><span class="chip">Redis</span><span class="chip">AWS</span></div>
     </div>
   </div>
 </section>
 
-<section id="word">
-  <h2 class="fade">A kind word</h2>
-  <blockquote class="fade">
-    <p>"Asad's expertise in building the Zenbee B2B sales intelligence platform was crucial. His work with Mongo, Angular, .NET, Redis, and AI technologies delivered a robust and scalable solution."</p>
-    <footer><b>Amine Mekkaoui</b> — CEO, Zenbee</footer>
-  </blockquote>
-</section>
-
-<section id="stack">
-  <h2 class="fade">Tech I use</h2>
-  <p class="sub fade">Chosen for the job, not the trend.</p>
-  <div class="stack fade">
-    <span class="chip">Angular</span><span class="chip">.NET</span><span class="chip">TypeScript</span>
-    <span class="chip">RxJS</span><span class="chip">Node.js</span><span class="chip">Flutter / Dart</span>
-    <span class="chip">Kotlin</span><span class="chip">Docker</span><span class="chip">Azure DevOps</span>
-    <span class="chip">Supabase</span><span class="chip">Claude Code</span><span class="chip">MCP</span>
+<section id="testimonials">
+  <p class="eyebrow fade">What people say</p>
+  <h2 class="fade">Trusted by clients worldwide</h2>
+  <p class="sub fade">Here's what some of my clients and colleagues have to say about my work and collaboration.</p>
+  <div class="grid two">
+    <blockquote class="fade">
+      <p>"Asad's expertise in building the Zenbee B2B sales intelligence platform was crucial. His work with Mongo, Angular, .NET, Redis, and AI technologies delivered a robust and scalable solution."</p>
+      <footer><b>Amine Mekkaoui</b> — CEO at Zenbee</footer>
+    </blockquote>
+    <blockquote class="fade">
+      <p>"Asad was instrumental in our Perforce MERN stack project on Upwork. His deep understanding of the MERN stack and ability to deliver high-quality code was exceptional."</p>
+      <footer><b>Albert Williams</b> — Project Manager at Perforce</footer>
+    </blockquote>
+    <blockquote class="fade">
+      <p>"Asad's work on the EZ Brand Chrome extensions significantly boosted our lead generation efforts. His innovative approach and technical skills are truly impressive."</p>
+      <footer><b>Joe</b> — Founder of EZ Brands</footer>
+    </blockquote>
+    <blockquote class="fade">
+      <p>"Asad's development of the Facebook Chrome extension revolutionized our outreach. His solution was efficient, effective, and seamlessly integrated with our workflow."</p>
+      <footer><b>Antonio Carter</b> — Marketing Lead</footer>
+    </blockquote>
   </div>
 </section>
 
-<footer class="site" id="contact">
-  <h2 class="fade">Let's build something that matters.</h2>
-  <p class="sub fade" style="margin:0 auto">Hiring for a lead or architect role — or want to talk AI, web, or security?</p>
-  <div class="cta-row fade" style="justify-content:center">
-    <a class="btn primary" href="mailto:asadtechlead@gmail.com">asadtechlead@gmail.com</a>
+<section id="youtube">
+  <p class="eyebrow fade">Content</p>
+  <h2 class="fade">I also make videos</h2>
+  <p class="sub fade" style="margin-bottom:1rem">Practical videos on AI tools, web development, and security for developers — new channel, more coming.</p>
+  <a class="btn fade" href="https://www.youtube.com/@asadtechlead">▶ youtube.com/@asadtechlead</a>
+</section>
+
+<section id="contact">
+  <p class="eyebrow fade">Let's talk</p>
+  <h2 class="fade">Open to the right opportunity</h2>
+  <p class="sub fade">Immediate joiner. No notice period. Available for remote roles, contracts, and interesting problems.</p>
+  <div class="contact-grid fade">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:.6rem">Get in touch</h3>
+      <p style="font-size:.95rem;color:var(--ink2)">Whether it's a full-time remote role, a contract, or a conversation — I'm happy to talk. I respond quickly.</p>
+      <div class="clinks">
+        <a class="clink" href="mailto:asadtechlead@gmail.com">✉ asadtechlead@gmail.com</a>
+        <a class="clink" href="tel:+923084618263">📱 +92 308 4618263</a>
+        <a class="clink" href="https://www.linkedin.com/in/asad-software-engineer">in linkedin.com/in/asad-software-engineer</a>
+        <a class="clink" href="https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2">U Upwork — 5★ · 200+ hrs · MERN</a>
+        <a class="clink" href="https://github.com/asadtechlead">⌥ github.com/asadtechlead</a>
+        <span class="clink">📍 Lahore, Pakistan — Remote ready</span>
+      </div>
+    </div>
+    <form id="contactForm">
+      <input type="text" id="cname" placeholder="Your name" required/>
+      <input type="email" id="cemail" placeholder="Email" required/>
+      <textarea id="cmsg" placeholder="Message" required></textarea>
+      <button class="btn primary" type="submit">Send message →</button>
+    </form>
   </div>
-  <div class="foot-links fade">
-    <a href="https://www.linkedin.com/in/asad-software-engineer">LinkedIn</a>
-    <a href="https://github.com/asadtechlead">GitHub</a>
-    <a href="https://www.youtube.com/@asadtechlead">YouTube</a>
-    <a href="https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2">Upwork</a>
-  </div>
-  <p class="fine">© 2026 Asad Mahmood · Lahore, Pakistan · Made calmly.</p>
+</section>
+
+<footer class="site">
+  <p class="fine">© 2026 Asad Mahmood — Software Architect &amp; Team Lead · Senior Full-Stack Engineer<br/>Lahore, Pakistan · Remote-ready · <a href="https://asad.zaions.com">asad.zaions.com</a></p>
 </footer>
 
 </div>
 
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+// theme: manual toggle, persisted; defaults to system preference
+const root=document.documentElement, btn=document.getElementById('themeBtn');
+const saved=localStorage.getItem('theme');
+const sysDark=matchMedia('(prefers-color-scheme: dark)').matches;
+function setTheme(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'☀️':'🌙';localStorage.setItem('theme',t)}
+setTheme(saved||(sysDark?'dark':'light'));
+btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+// contact form → opens mail client prefilled (no backend on GitHub Pages)
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=encodeURIComponent(document.getElementById('cname').value);
+  const m=encodeURIComponent(document.getElementById('cmsg').value+"\n\n— "+document.getElementById('cname').value+" ("+document.getElementById('cemail').value+")");
+  location.href=`mailto:asadtechlead@gmail.com?subject=Portfolio contact from ${n}&body=${m}`;
+});
 </script>
 </body>
 </html>
