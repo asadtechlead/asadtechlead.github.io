@@ -1,0 +1,28 @@
+# Asad Mahmood — Software Architect & Team Lead
+
+> Personal portfolio of Asad Mahmood, a software architect and team lead in Lahore, Pakistan with 10+ years of full-stack experience. Open to remote full-time roles, contracts, and consulting — any timezone, immediate joiner.
+
+Last updated: 2026-07-11
+
+## Who
+
+- Software Architect & Team Lead at Croyten (Foviro) — leads 7 engineers on Zenbee, a B2B sales intelligence SaaS
+- Specialties: Angular (4–17), .NET, Node.js, TypeScript, WebRTC at the SDP level, Chrome extensions (Manifest V3), AI engineering (Claude Code, MCP servers), AWS cost optimization, OWASP-first security
+- Track record: cut a client's AWS bill 50%, cut SDK bug density 65%, cut live-streaming latency from ~1s to milliseconds, 5.0★ Upwork across 200+ hours
+
+## Products (founder)
+
+- [Gaugely](https://gaugely.io): AI recruiting software — CV screening + real-time voice AI interviews with evidence-backed scorecards
+- [InBill](https://inbill.net): free AI invoice generator for freelancers (web + Android)
+- [KidSpin](https://kidspin.zaions.com): bilingual English + Urdu preschool learning app
+- [Free AI tools](https://tools.zaions.com): ATS résumé checker, prompt builder, faceless-video generator — 100% client-side
+- [Zaions](https://zaions.com): his software studio
+- [Gumroad](https://asadtechlead.gumroad.com): AI workflow systems + 1:1 consultations
+
+## Contact
+
+- Email: asadtechlead@gmail.com
+- LinkedIn: https://www.linkedin.com/in/asad-software-engineer
+- GitHub: https://github.com/asadtechlead
+- YouTube: https://www.youtube.com/@asadtechlead
+- Upwork: https://www.upwork.com/freelancers/~01a32bcdefbaa6cef2
