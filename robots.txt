@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asadtechlead.github.io/sitemap.xml
