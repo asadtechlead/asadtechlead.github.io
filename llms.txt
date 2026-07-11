@@ -15,6 +15,7 @@ Last updated: 2026-07-11
 - [Gaugely](https://gaugely.io): AI recruiting software — CV screening + real-time voice AI interviews with evidence-backed scorecards
 - [InBill](https://inbill.net): free AI invoice generator for freelancers (web + Android)
 - [KidSpin](https://kidspin.zaions.com): bilingual English + Urdu preschool learning app
+- [FruitNow](https://fruitnow.pk): fresh fruit delivery for offices and homes in Lahore, Pakistan
 - [Free AI tools](https://tools.zaions.com): ATS résumé checker, prompt builder, faceless-video generator — 100% client-side
 - [Zaions](https://zaions.com): his software studio
 - [Gumroad](https://asadtechlead.gumroad.com): AI workflow systems + 1:1 consultations
